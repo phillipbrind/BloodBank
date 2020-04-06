@@ -1,0 +1,261 @@
+﻿a {
+    color: #000;
+    transition: color 300ms ease-out;
+}
+
+    a:hover {
+        color: tomato;
+        text-decoration: none;
+        transition: color 300ms ease-out;
+    }
+
+.my-border {
+    border: 1px solid red;
+}
+
+/* Header */
+.logo-img {
+    margin: 15px 5px;
+}
+
+.logo-title {
+    padding-left: 10px;
+    font: bold 1.1em Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+
+.login {
+    padding: 32px;
+    font: 0.8em Arial, Helvetica, sans-serif;
+    text-align: end;
+    text-transform: capitalize;
+}
+
+.donate-now {
+    padding: 32px;
+    font: bold 0.8em Arial, Helvetica, sans-serif;
+    text-align: center;
+    text-transform: capitalize;
+    background-color: tomato;
+    transition: background-color 400ms ease-out;
+}
+
+    .donate-now:hover {
+        background-color: #000;
+        transition: background-color 400ms ease-out;
+    }
+
+    .donate-now a {
+        color: #fff;
+    }
+
+.menu-overflow {
+    padding: 32px;
+    font: bold 0.8em Arial, Helvetica, sans-serif;
+    text-align: center;
+    text-transform: capitalize;
+    background-color: #000;
+}
+
+    .menu-overflow a {
+        color: #fff;
+    }
+
+        .menu-overflow a:hover {
+            color: tomato;
+        }
+
+    .menu-overflow img {
+        margin-left: 20px;
+    }
+
+/* Login Page */
+.login-content {
+    margin: 50px 15px;
+}
+
+.login-user {
+    font: bold 3em Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+    padding: 15px;
+}
+
+.new-user {
+    padding: 15px 0px 60px 0px;
+    font: 1em Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+}
+
+    .new-user a {
+        padding-left: 5px;
+        color: tomato;
+    }
+
+        .new-user a:hover {
+            text-decoration: none;
+        }
+
+.user-input input {
+    width: 330px;
+    border: none;
+    box-shadow: none;
+}
+
+.user-input label {
+    position: absolute;
+    width: 330px;
+    pointer-events: none;
+    transition: 0.5s;
+    text-transform: capitalize;
+    font: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+.user-input input:focus + label,
+.user-input input:valid + label {
+    transform: translateY(-35px);
+    font-size: 12px;
+}
+
+.input-line {
+    padding-bottom: 60px;
+}
+
+    .input-line span {
+        width: 330px;
+        background-color: #000;
+        height: 1px;
+    }
+
+#password-line {
+    height: 0.5px;
+}
+
+.forgot-pass {
+    width: 330px;
+    color: #000;
+    text-decoration: underline;
+}
+
+    .forgot-pass:hover {
+        color: #000;
+        text-decoration: underline;
+    }
+
+.login-btn {
+    padding-top: 10px;
+}
+
+    .login-btn input {
+        width: 330px;
+        height: 50px;
+        text-transform: capitalize;
+        background-color: tomato;
+        color: #fff;
+        border: none;
+    }
+
+        .login-btn input:hover {
+            opacity: 0.7;
+            transition: opacity 400ms ease-out;
+        }
+
+/* Menu Page */
+.menu-content {
+    margin: 30px 15px;
+}
+
+.menu-logo {
+    margin-left: 30px;
+}
+
+.menu {
+    font: bold 1.8em Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+
+    .menu li {
+        display: inline-block;
+        padding: 5px 25px;
+    }
+
+        .menu li ul {
+            width: 300px;
+            position: absolute;
+            text-align: center;
+            top: 190px;
+            right: 190px;
+            display: none;
+        }
+
+        .menu li:hover ul {
+            display: block;
+        }
+
+.donate-btn {
+    margin-top: 30px;
+    width: 250px;
+    height: 45px;
+    text-transform: capitalize;
+    background-color: tomato;
+    color: #fff;
+    border: none;
+    font: bold 0.8em Arial, Helvetica, sans-serif;
+    transition: background-color 400ms ease-out;
+}
+
+    .donate-btn:hover {
+        background-color: #000;
+        transition: background-color 400ms ease-out;
+    }
+
+/* SignUp Page */
+.sign-user {
+    font: bold 3em Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+    padding-bottom: 30px;
+}
+
+.txt {
+    border: none;
+    box-shadow: none;
+    width: 250px;
+}
+
+.line {
+    width: 250px;
+    background-color: #000;
+    height: 1px;
+    margin-bottom: 50px;
+}
+
+#fname-line, #age-line, #address-line, #username-line {
+    height: 0.5px;
+}
+
+.error-message {
+    position: absolute;
+    top: 740px;
+    left: 460px;
+    font: 1em Arial, Helvetica, sans-serif;
+    color: red;
+}
+
+.signup-btn {
+    width: 250px;
+    height: 50px;
+    text-transform: capitalize;
+    background-color: #000;
+    color: #fff;
+    border: none;
+}
+
+.login-link {
+    font: bold 1em Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+    padding: 4px 5px;
+}
+
+    .login-link:hover {
+        color: #000;
+    }

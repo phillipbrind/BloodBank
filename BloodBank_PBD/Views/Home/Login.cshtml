@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<div class="container login-content">
+    <div class="row justify-content-end"><a href="@Url.Action("Index", "Home")"><img src="~/images/exit_icon.png" alt="exit_icon" /></a></div>
+    <div class="row justify-content-center login-user">log in</div>
+    <div class="row justify-content-center new-user">new to this site?@Html.ActionLink("sign up", "SignUp", "Home")</div>
+    @using (Html.BeginForm())
+    {
+        <div class="row justify-content-center user-input">
+            @Html.TextBox("user", "", new { maxlength = "20", required = "" })
+            @Html.Label("username", "username")
+        </div>
+        <div class="row justify-content-center input-line"><span id="user-line"></span></div>
+
+        <div class="row justify-content-center user-input">
+            @Html.TextBox("password", "", new { type = "password", maxlength = "20", required = "" })
+            @Html.Label("password", "password")
+        </div>
+        <div class="row justify-content-center input-line"><span id="password-line"></span></div>
+        <div class="row justify-content-center"><a href="#" class="forgot-pass">Forgot password?</a></div>
+        <div class="row justify-content-center login-btn"><input type="submit" value="log in"></div>
+    }
+</div>

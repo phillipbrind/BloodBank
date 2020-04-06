@@ -1,0 +1,40 @@
+﻿@model BloodBank_PBD.Models.User
+
+@{
+    ViewBag.Title = "Sign Up";
+}
+
+<div class="container login-content">
+    <div class="row justify-content-end"><a href="@Url.Action("Index", "Home")"><img src="/images/exit_icon.png" alt="exit_icon" /></a></div>
+    <div class="row justify-content-center sign-user">sign up</div>
+    @using (Html.BeginForm("CreateUser", "User"))
+    {
+        <div class="row justify-content-center">@Html.TextBoxFor(m => m.FirstName, new { @class = "txt", id = "firstname", placeholder = "First Name", maxlength = "30", required = "true" })</div>
+        <div class="row justify-content-center"><span id="fname-line" class="line"></span></div>
+
+        <div class="row justify-content-center">@Html.TextBoxFor(m => m.LastName, new { @class = "txt", id = "lastname", placeholder = "Last Name", maxlength = "30", required = "true" })</div>
+        <div class="row justify-content-center"><span id="lname-line" class="line"></span></div>
+
+        <div class="row justify-content-center">@Html.TextBoxFor(m => m.Age, new { @class = "txt", id = "age", placeholder = "Age", type = "number", required = "true" })</div>
+        <div class="row justify-content-center"><span id="age-line" class="line"></span></div>
+
+        <div class="row justify-content-center">@Html.TextBoxFor(m => m.Location, new { @class = "txt", id = "address", placeholder = "Address", maxlength = "60", required = "true" })</div>
+        <div class="row justify-content-center"><span id="address-line" class="line"></span></div>
+
+        <div class="row justify-content-center">@Html.TextBoxFor(m => m.BloodType, new { @class = "txt", id = "blood-type", placeholder = "Blood Type", maxlength = "2", required = "true" })</div>
+        <div class="row justify-content-center"><span id="bloodtype-line" class="line"></span></div>
+
+        <div class="row justify-content-center">@Html.TextBoxFor(m => m.UserName, new { @class = "txt", id = "username", placeholder = "Username", maxlength = "20", required = "true" })</div>
+        <div class="row justify-content-center"><span id="username-line" class="line"></span></div>
+
+        <div class="row justify-content-center">@Html.TextBoxFor(m => m.Password, new { @class = "txt", id = "password", placeholder = "Password", type = "password", maxlength = "20", required = "true" })</div>
+        <div class="row justify-content-center"><span id="password-line" class="line"></span></div>
+
+        <div class="row justify-content-center">@Html.TextBox("confirm-pass", "", new { @class = "txt", placeholder = "Confirm Password", type = "password", maxlength = "20", required = "true" })</div>
+        <div class="row justify-content-center"><span id="confirm-pass-line" class="line"></span></div>
+        <div class="row justify-content-center"><span id="error-message" class="error-message">Password didn't match</span></div>
+
+        <div class="row justify-content-center"><input type="submit" value="Sign up" class="signup-btn" id="signup-btn" /></div>
+    }
+    <div class="row justify-content-center">Already a member?@Html.ActionLink("log in", "Login", "Home", null, new { @class = "login-link" })</div>
+</div>
