@@ -328,6 +328,7 @@
     <Content Include="Views\User\GetAllUsers.cshtml" />
     <Content Include="Views\Test\GetAllTests.cshtml" />
     <Content Include="Views\Shared\_MenuLayout.cshtml" />
+    <Content Include="Views\User\UpdateUser.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

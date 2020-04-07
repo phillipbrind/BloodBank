@@ -1,5 +1,6 @@
 ﻿using BloodBank_PBD.Models;
 using System;
+using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
 using System.Linq;
@@ -39,9 +40,37 @@ namespace BloodBank_PBD.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public ActionResult UpdateUser()
+        public ActionResult UpdateUser(int id)
         {
-            return View();
+            User user = db.Users.Find(id);
+
+            return View(user);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateUser(User user)
+        {
+            try
+            {
+                db.Entry(user).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+            catch (DbEntityValidationException e)
+            {
+                foreach (var ex in e.EntityValidationErrors)
+                {
+                    Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:", ex.Entry.Entity.GetType().Name, ex.Entry.State);
+
+                    foreach (var se in ex.ValidationErrors)
+                    {
+                        Debug.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            se.PropertyName, se.ErrorMessage);
+                    }
+                }
+                throw;
+            }
+
+            return RedirectToAction("GetAllUsers");
         }
 
         public ActionResult DeleteUser(int id)

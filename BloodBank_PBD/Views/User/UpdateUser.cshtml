@@ -1,0 +1,33 @@
+﻿@model BloodBank_PBD.Models.User
+
+@{
+    ViewBag.Title = "Update User";
+}
+
+<div class="container login-content">
+    <div class="row justify-content-end"><a href="@Url.Action("GetAllUsers")"><img src="/images/exit_icon.png" alt="exit_icon" /></a></div>
+    <div class="row justify-content-center sign-user">update user information</div>
+    @using (Html.BeginForm())
+    {
+        <div class="row justify-content-center">@Html.TextBoxFor(m => m.FirstName, new { @class = "txt", id = "firstname", placeholder = "First Name", maxlength = "30", required = "true" })</div>
+        <div class="row justify-content-center"><span id="fname-line" class="line"></span></div>
+
+        <div class="row justify-content-center">@Html.TextBoxFor(m => m.LastName, new { @class = "txt", id = "lastname", placeholder = "Last Name", maxlength = "30", required = "true" })</div>
+        <div class="row justify-content-center"><span id="lname-line" class="line"></span></div>
+
+        <div class="row justify-content-center">@Html.TextBoxFor(m => m.Age, new { @class = "txt", id = "age", placeholder = "Age", type = "number", required = "true" })</div>
+        <div class="row justify-content-center"><span id="age-line" class="line"></span></div>
+
+        <div class="row justify-content-center">@Html.TextBoxFor(m => m.Location, new { @class = "txt", id = "address", placeholder = "Address", maxlength = "60", required = "true" })</div>
+        <div class="row justify-content-center"><span id="address-line" class="line"></span></div>
+
+        <div class="row justify-content-center">@Html.TextBoxFor(m => m.BloodType, new { @class = "txt", id = "blood-type", placeholder = "Blood Type", maxlength = "3", required = "true" })</div>
+        <div class="row justify-content-center"><span id="bloodtype-line" class="line"></span></div>
+
+        @Html.HiddenFor(m => m.UserId)
+        @Html.HiddenFor(m => m.UserName)
+        @Html.HiddenFor(m => m.Password)
+
+        <div class="row justify-content-center"><input type="submit" value="update" class="signup-btn" /></div>
+    }
+</div>
