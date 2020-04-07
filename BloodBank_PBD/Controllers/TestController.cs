@@ -1,8 +1,7 @@
 ﻿using BloodBank_PBD.Models;
-using System;
-using System.Collections.Generic;
+using System.Data.Entity.Validation;
+using System.Diagnostics;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace BloodBank_PBD.Controllers
@@ -13,8 +12,25 @@ namespace BloodBank_PBD.Controllers
 
         public ActionResult CreateTest(Test test)
         {
-            db.Tests.Add(test);
-            db.SaveChanges();
+            try
+            {
+                db.Tests.Add(test);
+                db.SaveChanges();
+            }
+            catch (DbEntityValidationException e)
+            {
+                foreach (var ex in e.EntityValidationErrors)
+                {
+                    Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:", ex.Entry.Entity.GetType().Name, ex.Entry.State);
+
+                    foreach (var se in ex.ValidationErrors)
+                    {
+                        Debug.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            se.PropertyName, se.ErrorMessage);
+                    }
+                }
+                throw;
+            }
 
             return View();
         }
