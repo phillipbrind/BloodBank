@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Blood Bank Management System</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container menu-content">
+        <div class="row justify-content-center">
+            <div class="col-md-3 align-self-center menu-logo">
+                <a href="@Url.Action("Index", "Home")"><img src="~/images/logo.png" alt="logo_icon" class="logo-img" /></a>
+                <a href="@Url.Action("Index", "Home")"><span class="logo-title">last hope</span></a>
+            </div>
+        </div>
+        <div class="row justify-content-end"><a href="@Url.Action("Index", "Home")"><img src="/images/exit_icon.png" alt="exit_icon" /></div>
+        <div class="row justify-content-center">
+            <ul class="menu">
+                <li>@Html.ActionLink("home", "Index", "Home")</li>
+                <li>@Html.ActionLink("about", "About", "Home")</li>
+                <li>@Html.ActionLink("services", "Services", "Home")</li>
+                <li>@Html.ActionLink("contact", "Contact", "Home")</li>
+                <li>
+                    admin
+                    <ul>
+                        <li>@Html.ActionLink("donors", "GetAllUsers", "User")</li>
+                        <li>@Html.ActionLink("donor tests", "GetAllTests", "Test")</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/custom")
+</body>
+</html>

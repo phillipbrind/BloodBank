@@ -11,6 +11,7 @@ namespace BloodBank_PBD.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     public partial class User
     {
@@ -21,12 +22,21 @@ namespace BloodBank_PBD.Models
         }
 
         public int UserId { get; set; }
+        [Display(Name = "First Name")]
+        [MaxLength(30)]
         public string FirstName { get; set; }
+        [Display(Name = "Last Name")]
+        [MaxLength(30)]
         public string LastName { get; set; }
+        [MaxLength(60)]
         public string Location { get; set; }
         public int Age { get; set; }
+        [Display(Name = "Blood Type")]
+        [MaxLength(3)]
         public string BloodType { get; set; }
+        [MaxLength(20)]
         public string UserName { get; set; }
+        [MaxLength(20)]
         public string Password { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

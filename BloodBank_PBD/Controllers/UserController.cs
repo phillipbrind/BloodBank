@@ -1,6 +1,8 @@
 ﻿using BloodBank_PBD.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Web;
@@ -16,8 +18,25 @@ namespace BloodBank_PBD.Controllers
         {
             user.Password = Convert.ToBase64String(System.Security.Cryptography.SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(user.Password)));
 
-            db.Users.Add(user);
-            db.SaveChanges();
+            try
+            {
+                db.Users.Add(user);
+                db.SaveChanges();
+            }
+            catch (DbEntityValidationException e)
+            {
+                foreach (var ex in e.EntityValidationErrors)
+                {
+                    Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:", ex.Entry.Entity.GetType().Name, ex.Entry.State);
+
+                    foreach (var se in ex.ValidationErrors)
+                    {
+                        Debug.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            se.PropertyName, se.ErrorMessage);
+                    }
+                }
+                throw;
+            }
 
             return RedirectToAction("Index", "Home");
         }

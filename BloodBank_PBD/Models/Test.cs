@@ -11,14 +11,18 @@ namespace BloodBank_PBD.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     public partial class Test
     {
+        [Display(Name = "Test Id")]
         public int TestId { get; set; }
+        [MaxLength(50)]
         public string DonorFullName { get; set; }
         public int Weight { get; set; }
         public int Height { get; set; }
         public int BP { get; set; }
+        [MaxLength(10)]
         public string Progress { get; set; }
         public System.DateTime Date { get; set; }
         public int UserId { get; set; }
