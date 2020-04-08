@@ -145,6 +145,20 @@
     height: 0.5px;
 }
 
+.user-login-error {
+    position: absolute;
+    left: 425px;
+    top: 295px;
+    color: #DC3545;
+}
+
+.pass-login-error {
+    position: absolute;
+    top: 385px;
+    left: 425px;
+    color: #DC3545;
+}
+
 .forgot-pass {
     width: 330px;
     color: #000000;
@@ -252,7 +266,7 @@
     top: 740px;
     left: 460px;
     font: 1em Arial, Helvetica, sans-serif;
-    color: red;
+    color: #DC3545;
 }
 
 .signup-btn {

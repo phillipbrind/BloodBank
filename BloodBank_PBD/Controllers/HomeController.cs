@@ -26,7 +26,7 @@ namespace BloodBank_PBD.Controllers
         {
             if (db.Users.Where(x => x.UserName.Equals(ulm.UserName)).Count() == 0)
             {
-                ViewBag.Error = "Username does not exists";
+                ViewBag.UserError = "Username does not exists";
 
                 return View(ulm);
             }
@@ -36,7 +36,7 @@ namespace BloodBank_PBD.Controllers
 
                 if (db.Users.Where(x => x.UserName.Equals(ulm.UserName) && x.Password.Equals(encrypted_pass)).Count() == 0)
                 {
-                    ViewBag.Error = "You enter an incorrect password";
+                    ViewBag.PasswordError = "You entered an incorrect password";
 
                     return View(ulm);
                 }

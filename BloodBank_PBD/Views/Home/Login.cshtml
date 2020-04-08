@@ -15,12 +15,20 @@
             @Html.LabelFor(m => m.UserName)
         </div>
         <div class="row justify-content-center input-line"><span id="user-line"></span></div>
+        if (ViewBag.UserError != null)
+        {
+            <div class="user-login-error">@ViewBag.UserError</div>
+        }
 
         <div class="row justify-content-center user-input">
             @Html.PasswordFor(m => m.Password, new { id = "password", maxlength = "20", required = "" })
             @Html.LabelFor(m => m.Password)
         </div>
         <div class="row justify-content-center input-line"><span id="password-line"></span></div>
+        if (ViewBag.PasswordError != null)
+        {
+            <div class="pass-login-error">@ViewBag.PasswordError</div>
+        }
         <div class="row justify-content-center"><a href="#" class="forgot-pass">Forgot password?</a></div>
         <div class="row justify-content-center login-btn"><input type="submit" value="log in"></div>
     }
