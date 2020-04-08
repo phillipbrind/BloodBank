@@ -1,10 +1,10 @@
 ﻿a {
-    color: #000;
+    color: #000000;
     transition: color 300ms ease-out;
 }
 
     a:hover {
-        color: tomato;
+        color: #F1562A;
         text-decoration: none;
         transition: color 300ms ease-out;
     }
@@ -14,8 +14,13 @@
 }
 
 /* Header */
+.upper-header {
+    background-color: #F7F9FA;
+}
+
 .logo-img {
     margin: 15px 5px;
+    height: 47px;
 }
 
 .logo-title {
@@ -24,8 +29,17 @@
     text-transform: uppercase;
 }
 
+.logged-user {
+    font: 1.2em Arial, Helvetica, sans-serif;
+    text-transform: none;
+}
+
+    .logged-user img {
+        height: 20px;
+    }
+
 .login {
-    padding: 32px;
+    padding: 29px;
     font: 0.8em Arial, Helvetica, sans-serif;
     text-align: end;
     text-transform: capitalize;
@@ -36,17 +50,17 @@
     font: bold 0.8em Arial, Helvetica, sans-serif;
     text-align: center;
     text-transform: capitalize;
-    background-color: tomato;
+    background-color: #F1562A;
     transition: background-color 400ms ease-out;
 }
 
     .donate-now:hover {
-        background-color: #000;
+        background-color: #000000;
         transition: background-color 400ms ease-out;
     }
 
     .donate-now a {
-        color: #fff;
+        color: #FFFFFF;
     }
 
 .menu-overflow {
@@ -54,15 +68,15 @@
     font: bold 0.8em Arial, Helvetica, sans-serif;
     text-align: center;
     text-transform: capitalize;
-    background-color: #000;
+    background-color: #000000;
 }
 
     .menu-overflow a {
-        color: #fff;
+        color: #FFFFFF;
     }
 
         .menu-overflow a:hover {
-            color: tomato;
+            color: #F1562A;
         }
 
     .menu-overflow img {
@@ -88,7 +102,7 @@
 
     .new-user a {
         padding-left: 5px;
-        color: tomato;
+        color: #F1562A;
     }
 
         .new-user a:hover {
@@ -123,7 +137,7 @@
 
     .input-line span {
         width: 330px;
-        background-color: #000;
+        background-color: #000000;
         height: 1px;
     }
 
@@ -133,12 +147,12 @@
 
 .forgot-pass {
     width: 330px;
-    color: #000;
+    color: #000000;
     text-decoration: underline;
 }
 
     .forgot-pass:hover {
-        color: #000;
+        color: #000000;
         text-decoration: underline;
     }
 
@@ -150,8 +164,8 @@
         width: 330px;
         height: 50px;
         text-transform: capitalize;
-        background-color: tomato;
-        color: #fff;
+        background-color: #F1562A;
+        color: #FFFFFF;
         border: none;
     }
 
@@ -197,15 +211,15 @@
     width: 250px;
     height: 45px;
     text-transform: capitalize;
-    background-color: tomato;
-    color: #fff;
+    background-color: #F1562A;
+    color: #FFFFFF;
     border: none;
     font: bold 0.8em Arial, Helvetica, sans-serif;
     transition: background-color 400ms ease-out;
 }
 
     .donate-btn:hover {
-        background-color: #000;
+        background-color: #000000;
         transition: background-color 400ms ease-out;
     }
 
@@ -224,7 +238,7 @@
 
 .line {
     width: 250px;
-    background-color: #000;
+    background-color: #000000;
     height: 1px;
     margin-bottom: 50px;
 }
@@ -245,8 +259,8 @@
     width: 250px;
     height: 50px;
     text-transform: capitalize;
-    background-color: #000;
-    color: #fff;
+    background-color: #000000;
+    color: #FFFFFF;
     border: none;
 }
 
@@ -257,7 +271,7 @@
 }
 
     .login-link:hover {
-        color: #000;
+        color: #000000;
     }
 
 /* Admin Page */

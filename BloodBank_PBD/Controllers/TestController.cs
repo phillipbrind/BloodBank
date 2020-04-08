@@ -8,7 +8,7 @@ namespace BloodBank_PBD.Controllers
 {
     public class TestController : Controller
     {
-        Blood_Bank_Entities db = new Blood_Bank_Entities();
+        private Blood_Bank_Entities db = new Blood_Bank_Entities();
 
         public ActionResult CreateTest(Test test)
         {

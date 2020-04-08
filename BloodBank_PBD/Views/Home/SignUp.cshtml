@@ -27,10 +27,10 @@
         <div class="row justify-content-center">@Html.TextBoxFor(m => m.UserName, new { @class = "txt", id = "username", placeholder = "Username", maxlength = "20", required = "true" })</div>
         <div class="row justify-content-center"><span id="username-line" class="line"></span></div>
 
-        <div class="row justify-content-center">@Html.TextBoxFor(m => m.Password, new { @class = "txt", id = "password", placeholder = "Password", type = "password", maxlength = "20", required = "true" })</div>
+        <div class="row justify-content-center">@Html.PasswordFor(m => m.Password, new { @class = "txt", id = "password", placeholder = "Password", type = "password", maxlength = "20", required = "true" })</div>
         <div class="row justify-content-center"><span id="password-line" class="line"></span></div>
 
-        <div class="row justify-content-center">@Html.TextBox("confirm-pass", "", new { @class = "txt", placeholder = "Confirm Password", type = "password", maxlength = "20", required = "true" })</div>
+        <div class="row justify-content-center">@Html.Password("confirm-pass", "", new { @class = "txt", placeholder = "Confirm Password", type = "password", maxlength = "20", required = "true" })</div>
         <div class="row justify-content-center"><span id="confirm-pass-line" class="line"></span></div>
         <div class="row justify-content-center"><span id="error-message" class="error-message">Password didn't match</span></div>
 

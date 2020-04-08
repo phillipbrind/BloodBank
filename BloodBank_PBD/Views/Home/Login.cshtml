@@ -1,4 +1,5 @@
-﻿
+﻿@model BloodBank_PBD.ViewModel.UserLoginModel
+
 @{
     ViewBag.Title = "Login";
 }
@@ -10,14 +11,14 @@
     @using (Html.BeginForm())
     {
         <div class="row justify-content-center user-input">
-            @Html.TextBox("user", "", new { maxlength = "20", required = "" })
-            @Html.Label("username", "username")
+            @Html.TextBoxFor(m => m.UserName, new { id = "user", maxlength = "20", required = "" })
+            @Html.LabelFor(m => m.UserName)
         </div>
         <div class="row justify-content-center input-line"><span id="user-line"></span></div>
 
         <div class="row justify-content-center user-input">
-            @Html.TextBox("password", "", new { type = "password", maxlength = "20", required = "" })
-            @Html.Label("password", "password")
+            @Html.PasswordFor(m => m.Password, new { id = "password", maxlength = "20", required = "" })
+            @Html.LabelFor(m => m.Password)
         </div>
         <div class="row justify-content-center input-line"><span id="password-line"></span></div>
         <div class="row justify-content-center"><a href="#" class="forgot-pass">Forgot password?</a></div>

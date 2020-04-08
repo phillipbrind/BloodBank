@@ -159,6 +159,7 @@
       <DependentUpon>BloodBankDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\UserLoginModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Blood_Bank_Info.mdf" />
@@ -174,6 +175,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\arrow_down_icon.png" />
     <Content Include="images\exit_icon.png" />
     <Content Include="images\logo.png" />
     <Content Include="images\menu-overflow.png" />
