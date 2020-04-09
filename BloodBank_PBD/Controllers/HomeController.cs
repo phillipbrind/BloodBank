@@ -56,5 +56,12 @@ namespace BloodBank_PBD.Controllers
         {
             return View();
         }
+
+        public ActionResult Logout()
+        {
+            Session.Clear();
+
+            return View("Index");
+        }
     }
 }

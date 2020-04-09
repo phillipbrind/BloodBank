@@ -30,13 +30,33 @@
 }
 
 .logged-user {
-    font: 1.2em Arial, Helvetica, sans-serif;
+    font: 1em Arial, Helvetica, sans-serif;
     text-transform: none;
 }
 
     .logged-user img {
         height: 20px;
     }
+
+.user-menu {
+    list-style-type: none;
+    font: 1.1em Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 75px;
+    right: 15px;
+    text-align: start;
+    background-color: #F7F9FA;
+    padding: 5px 20px 20px 20px;
+    display: none;
+}
+
+.user-menu-line {
+    background-color: #000000;
+    width: 75px;
+    height: 1px;
+    display: block;
+    margin: 15px 0px;
+}
 
 .login {
     padding: 29px;

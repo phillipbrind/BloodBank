@@ -13,7 +13,12 @@
                 <div class="col-md-3 login align-self-center">
                     @if (Session["Username"] != null)
                     {
-                        <a href="#" class="logged-user">@Session["Username"]<img src="~/images/arrow_down_icon.png" /></a>
+                        <a href="#" class="logged-user" id="logged-user">@Session["Username"]<img src="~/images/arrow_down_icon.png" /></a>
+                        <ul class="user-menu" id="user-menu">
+                            <li><a href="#">my account</a></li>
+                            <li><span class="user-menu-line"></span></li>
+                            <li>@Html.ActionLink("logout", "Logout")</li>
+                        </ul>
                     }
                     else
                     {

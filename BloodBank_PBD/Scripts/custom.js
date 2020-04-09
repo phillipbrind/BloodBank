@@ -1,4 +1,15 @@
-﻿// Log in
+﻿// User Login Profile
+$("#logged-user").hover(function () {
+    $("#user-menu").fadeIn();
+});
+
+$("#user-menu").hover(function () {
+    $("#user-menu").show();
+}, function () {
+    $("#user-menu").fadeOut();
+});
+
+// Log in
 $("#user").focus(function () {
     $("#user-line").css("background-color", "tomato");
 });
