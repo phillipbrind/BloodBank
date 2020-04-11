@@ -314,3 +314,55 @@
     text-transform: uppercase;
     padding: 25px 0px 20px 0px;
 }
+
+/* User Page*/
+.user-avatar {
+    width: 250px;
+    height: 258px;
+    text-align: center;
+    padding: 35px 25px;
+    margin: 50px 15px 0px 0px;
+}
+
+    .user-avatar img {
+        width: 80px;
+        height: 80px;
+    }
+
+.user {
+    margin-top: 10px;
+    font: 1em Arial, Helvetica, sans-serif;
+}
+
+.role {
+    margin: 5px 0px 20px 0px;
+    font: 0.7em Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+}
+
+.user-info {
+    padding: 80px 20px;
+}
+
+    .user-info h2 {
+        font: bold 1.5em Arial, Helvetica, sans-serif;
+        text-transform: capitalize;
+    }
+
+    .user-info p {
+        font: 0.9em Arial, Helvetica, sans-serif;
+    }
+
+.update-btn {
+    text-transform: capitalize;
+    background-color: #F1562A;
+    color: #FFFFFF;
+    border: none;
+    height: 40px;
+    display: none;
+}
+
+    .update-btn:hover {
+        opacity: 0.7;
+        transition: opacity 400ms ease-out;
+    }

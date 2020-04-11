@@ -9,7 +9,6 @@
 
 namespace BloodBank_PBD.Models
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
@@ -28,6 +27,7 @@ namespace BloodBank_PBD.Models
         [Display(Name = "Last Name")]
         [MaxLength(30)]
         public string LastName { get; set; }
+        [Display(Name = "Address")]
         [MaxLength(60)]
         public string Location { get; set; }
         public int Age { get; set; }

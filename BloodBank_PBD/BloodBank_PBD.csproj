@@ -179,6 +179,7 @@
     <Content Include="images\exit_icon.png" />
     <Content Include="images\logo.png" />
     <Content Include="images\menu-overflow.png" />
+    <Content Include="images\user_avatar.png" />
     <Content Include="Models\BloodBankDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BloodBankDB.Context.cs</LastGenOutput>
@@ -331,6 +332,7 @@
     <Content Include="Views\Test\GetAllTests.cshtml" />
     <Content Include="Views\Shared\_MenuLayout.cshtml" />
     <Content Include="Views\User\UpdateUser.cshtml" />
+    <Content Include="Views\User\UpdateUserInfo.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

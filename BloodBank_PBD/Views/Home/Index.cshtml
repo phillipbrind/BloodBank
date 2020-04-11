@@ -2,32 +2,3 @@
     ViewBag.Title = "Home";
 }
 
-<div class="container-fluid">
-    <div class="row upper-header">
-        <div class="col-md-5">
-            <a href="@Url.Action("Index", "Home")"><img src="~/images/logo.png" alt="logo_icon" class="logo-img" /></a>
-            <a href="@Url.Action("Index", "Home")"><span class="logo-title">last hope</span></a>
-        </div>
-        <div class="col-md-7">
-            <div class="row justify-content-end">
-                <div class="col-md-3 login align-self-center">
-                    @if (Session["Username"] != null)
-                    {
-                        <a href="#" class="logged-user" id="logged-user">@Session["Username"]<img src="~/images/arrow_down_icon.png" /></a>
-                        <ul class="user-menu" id="user-menu">
-                            <li><a href="#">my account</a></li>
-                            <li><span class="user-menu-line"></span></li>
-                            <li>@Html.ActionLink("logout", "Logout")</li>
-                        </ul>
-                    }
-                    else
-                    {
-                        @Html.ActionLink("log in", "Login", "Home")
-                    }
-                </div>
-                <div class="col-md-3 donate-now align-self-center">@Html.ActionLink("donate now", "SignUp", "Home")</div>
-                <div class="col-md-3 menu-overflow align-self-center"><a href="@Url.Action("Menu", "Home")">menu<img src="/images/menu-overflow.png" alt="menu_icon" /></a></div>
-            </div>
-        </div>
-    </div>
-</div>

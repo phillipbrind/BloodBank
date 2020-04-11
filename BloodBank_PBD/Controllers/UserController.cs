@@ -73,6 +73,19 @@ namespace BloodBank_PBD.Controllers
             return RedirectToAction("GetAllUsers");
         }
 
+        public ActionResult UpdateUserInfo(string username)
+        {
+            User user = db.Users.Where(m => m.UserName.Equals(username)).FirstOrDefault();
+
+            return View(user);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateUserInfo(User user)
+        {
+
+        }
+
         public ActionResult DeleteUser(int id)
         {
             User user = db.Users.Find(id);

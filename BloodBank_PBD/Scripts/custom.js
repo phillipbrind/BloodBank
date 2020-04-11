@@ -9,9 +9,14 @@ $("#user-menu").hover(function () {
     $("#user-menu").fadeOut();
 });
 
+$("#edit-btn").click(function () {
+    $("input").removeAttr("disabled");
+    $("#update-btn").show();
+});
+
 // Log in
 $("#user").focus(function () {
-    $("#user-line").css("background-color", "tomato");
+    $("#user-line").css("background-color", "#F1562A");
 });
 
 $("#user").blur(function () {
@@ -19,7 +24,7 @@ $("#user").blur(function () {
 });
 
 $("#password").focus(function () {
-    $("#password-line").css("background-color", "tomato");
+    $("#password-line").css("background-color", "#F1562A");
 });
 
 $("#password").blur(function () {
@@ -40,7 +45,7 @@ $("#password").hover(function () {
 
 // Sign Up
 $("#firstname").focus(function () {
-    $("#fname-line").css("background-color", "tomato");
+    $("#fname-line").css("background-color", "#F1562A");
 });
 
 $("#firstname").blur(function () {
@@ -48,7 +53,7 @@ $("#firstname").blur(function () {
 });
 
 $("#lastname").focus(function () {
-    $("#lname-line").css("background-color", "tomato");
+    $("#lname-line").css("background-color", "#F1562A");
 });
 
 $("#lastname").blur(function () {
@@ -56,7 +61,7 @@ $("#lastname").blur(function () {
 });
 
 $("#age").focus(function () {
-    $("#age-line").css("background-color", "tomato");
+    $("#age-line").css("background-color", "#F1562A");
 });
 
 $("#age").blur(function () {
@@ -64,7 +69,7 @@ $("#age").blur(function () {
 });
 
 $("#address").focus(function () {
-    $("#address-line").css("background-color", "tomato");
+    $("#address-line").css("background-color", "#F1562A");
 });
 
 $("#address").blur(function () {
@@ -72,7 +77,7 @@ $("#address").blur(function () {
 });
 
 $("#blood-type").focus(function () {
-    $("#bloodtype-line").css("background-color", "tomato");
+    $("#bloodtype-line").css("background-color", "#F1562A");
 });
 
 $("#blood-type").blur(function () {
@@ -80,7 +85,7 @@ $("#blood-type").blur(function () {
 });
 
 $("#username").focus(function () {
-    $("#username-line").css("background-color", "tomato");
+    $("#username-line").css("background-color", "#F1562A");
 });
 
 $("#username").blur(function () {
@@ -88,7 +93,7 @@ $("#username").blur(function () {
 });
 
 $("#confirm-pass").focus(function () {
-    $("#confirm-pass-line").css("background-color", "tomato");
+    $("#confirm-pass-line").css("background-color", "#F1562A");
 });
 
 $("#confirm-pass").blur(function () {
