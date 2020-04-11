@@ -162,3 +162,13 @@ $("#signup-btn").click(function () {
         return false;
     }
 });
+
+// Admin
+$(document).ready(function () {
+    $("#search-lastname").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#user-table tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+});

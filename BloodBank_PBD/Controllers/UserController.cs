@@ -50,27 +50,32 @@ namespace BloodBank_PBD.Controllers
         [HttpPost]
         public ActionResult UpdateUser(User user)
         {
-            try
+            if (ModelState.IsValid)
             {
-                db.Entry(user).State = EntityState.Modified;
-                db.SaveChanges();
-            }
-            catch (DbEntityValidationException e)
-            {
-                foreach (var ex in e.EntityValidationErrors)
+                try
                 {
-                    Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:", ex.Entry.Entity.GetType().Name, ex.Entry.State);
+                    db.Entry(user).State = EntityState.Modified;
+                    db.SaveChanges();
 
-                    foreach (var se in ex.ValidationErrors)
-                    {
-                        Debug.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
-                            se.PropertyName, se.ErrorMessage);
-                    }
+                    return RedirectToAction("GetAllUsers");
                 }
-                throw;
+                catch (DbEntityValidationException e)
+                {
+                    foreach (var ex in e.EntityValidationErrors)
+                    {
+                        Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:", ex.Entry.Entity.GetType().Name, ex.Entry.State);
+
+                        foreach (var se in ex.ValidationErrors)
+                        {
+                            Debug.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                                se.PropertyName, se.ErrorMessage);
+                        }
+                    }
+                    throw;
+                }
             }
 
-            return RedirectToAction("GetAllUsers");
+            return View(user);
         }
 
         public ActionResult UpdateUserInfo(string username)

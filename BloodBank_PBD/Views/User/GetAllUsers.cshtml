@@ -1,16 +1,17 @@
 ﻿@model IEnumerable<BloodBank_PBD.Models.User>
 
 @{
-    ViewBag.Title = "Donors";
+    ViewBag.Title = "Admin";
     Layout = "~/Views/Shared/_MenuLayout.cshtml";
 }
 
 <div class="container">
     <div class="row justify-content-center admin-menu">list of donors</div>
 
-    <p>
-        @Html.ActionLink("Create New", "SignUp", "Home")
-    </p>
+    <div class="row">
+        <div class="col-md-2 d-flex justify-content-center">Search by:</div>
+        <div class="col-md-3"><input type="text" placeholder="Last Name" id="search-lastname" /></div>
+    </div>
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -32,7 +33,7 @@
                 <th></th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="user-table">
             @foreach (var item in Model)
             {
                 <tr>
