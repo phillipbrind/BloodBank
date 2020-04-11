@@ -20,20 +20,27 @@ namespace BloodBank_PBD.Models
             this.Tests = new HashSet<Test>();
         }
 
+        [Key]
         public int UserId { get; set; }
         [Display(Name = "First Name")]
+        [Required]
         [MaxLength(30)]
         public string FirstName { get; set; }
         [Display(Name = "Last Name")]
+        [Required]
         [MaxLength(30)]
         public string LastName { get; set; }
         [Display(Name = "Address")]
+        [Required]
         [MaxLength(60)]
         public string Location { get; set; }
+        [Required]
         public int Age { get; set; }
         [Display(Name = "Blood Type")]
+        [Required]
         [MaxLength(3)]
         public string BloodType { get; set; }
+        [Required]
         [MaxLength(20)]
         public string UserName { get; set; }
         [MaxLength(50)]

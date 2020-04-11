@@ -83,7 +83,32 @@ namespace BloodBank_PBD.Controllers
         [HttpPost]
         public ActionResult UpdateUserInfo(User user)
         {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    db.Entry(user).State = EntityState.Modified;
+                    db.SaveChanges();
 
+                    return RedirectToAction("UpdateUserInfo", user);
+                }
+                catch (DbEntityValidationException e)
+                {
+                    foreach (var ex in e.EntityValidationErrors)
+                    {
+                        Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:", ex.Entry.Entity.GetType().Name, ex.Entry.State);
+
+                        foreach (var se in ex.ValidationErrors)
+                        {
+                            Debug.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                                se.PropertyName, se.ErrorMessage);
+                        }
+                    }
+                    throw;
+                }
+            }
+
+            return View(user);
         }
 
         public ActionResult DeleteUser(int id)
