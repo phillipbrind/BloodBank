@@ -9,13 +9,11 @@
 
 namespace BloodBank_PBD.Models
 {
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
     public partial class Test
     {
-        [Display(Name = "Test Id")]
+        [Display(Name = "Test ID")]
         public int TestId { get; set; }
         [MaxLength(50)]
         public string DonorFullName { get; set; }
