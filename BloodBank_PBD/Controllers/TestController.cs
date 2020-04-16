@@ -1,4 +1,5 @@
 ﻿using BloodBank_PBD.Models;
+using System.Collections.Generic;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
 using System.Linq;
@@ -10,6 +11,22 @@ namespace BloodBank_PBD.Controllers
     {
         private Blood_Bank_Entities db = new Blood_Bank_Entities();
 
+        public ActionResult CreateTest()
+        {
+            List<User> userlist = db.Users.ToList();
+            List<string> fullname = new List<string>();
+            foreach (User user in userlist)
+            {
+                fullname.Add(user.FirstName + " " + user.LastName);
+            }
+            ViewBag.FullNameList = new SelectList(fullname);
+            string[] progress = { "Submitted", "Processing", "Completed" };
+            ViewBag.Progress = new SelectList(progress);
+
+            return View();
+        }
+
+        [HttpPost]
         public ActionResult CreateTest(Test test)
         {
             try

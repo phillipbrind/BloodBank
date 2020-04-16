@@ -1,0 +1,72 @@
+﻿@model BloodBank_PBD.Models.Test
+
+@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Shared/_MenuLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row justify-content-center admin-menu">add a test</div>
+    @using (Html.BeginForm())
+    {
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6 d-flex justify-content-center mt-4">
+                    @Html.LabelFor(m => m.DonorFullName)
+                </div>
+                <div class="col-md-5 mt-4">
+                    @Html.DropDownListFor(m => m.DonorFullName, @ViewBag.FullNameList as SelectList, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6 d-flex justify-content-center">
+                    @Html.LabelFor(m => m.Weight)
+                </div>
+                <div class="col-md-5">
+                    @Html.TextBoxFor(m => m.Weight, new { @class = "form-control", type = "number" })
+                    @Html.ValidationMessageFor(m => m.Weight, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6 d-flex justify-content-center">
+                    @Html.LabelFor(m => m.Height)
+                </div>
+                <div class="col-md-5">
+                    @Html.TextBoxFor(m => m.Height, new { @class = "form-control", type = "number" })
+                    @Html.ValidationMessageFor(m => m.Height, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6 d-flex justify-content-center">
+                    @Html.LabelFor(m => m.BP)
+                </div>
+                <div class="col-md-5">
+                    @Html.TextBoxFor(m => m.BP, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.BP, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6 d-flex justify-content-center">
+                    @Html.LabelFor(m => m.Progress)
+                </div>
+                <div class="col-md-5">
+                    @Html.DropDownListFor(m => m.Progress, ViewBag.Progress as SelectList, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-2">
+                <input type="submit" value="Add" class="btn btn-danger btn-block" />
+            </div>
+        </div>
+    }
+</div>

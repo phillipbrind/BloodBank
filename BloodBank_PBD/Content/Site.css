@@ -16,6 +16,10 @@
 /* Header */
 .upper-header {
     background-color: #F7F9FA;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
 }
 
 .logo-img {
@@ -316,6 +320,10 @@
 }
 
 /* User Page*/
+.user-info-container {
+    margin-top: 75px;
+}
+
 .user-avatar {
     width: 250px;
     height: 258px;

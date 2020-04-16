@@ -226,6 +226,12 @@
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.5.0.js" />
+    <Content Include="Scripts\jquery-3.5.0.min.js" />
+    <Content Include="Scripts\jquery-3.5.0.slim.js" />
+    <Content Include="Scripts\jquery-3.5.0.slim.min.js" />
+    <Content Include="Scripts\jquery-3.5.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.5.0.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -333,6 +339,7 @@
     <Content Include="Views\Shared\_MenuLayout.cshtml" />
     <Content Include="Views\User\UpdateUser.cshtml" />
     <Content Include="Views\User\UpdateUserInfo.cshtml" />
+    <Content Include="Views\Test\CreateTest.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -13,15 +13,20 @@ namespace BloodBank_PBD.Models
 
     public partial class Test
     {
+        [Key]
         [Display(Name = "Test ID")]
         public int TestId { get; set; }
         [MaxLength(50)]
         public string DonorFullName { get; set; }
+        [Required]
         public int Weight { get; set; }
+        [Required]
         public int Height { get; set; }
+        [Required]
         public int BP { get; set; }
         [MaxLength(10)]
         public string Progress { get; set; }
+        [Required]
         public System.DateTime Date { get; set; }
         public int UserId { get; set; }
 
