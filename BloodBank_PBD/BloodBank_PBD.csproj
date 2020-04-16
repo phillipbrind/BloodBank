@@ -176,6 +176,9 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="images\arrow_down_icon.png" />
+    <Content Include="images\carousel\blood_donation_01.jpg" />
+    <Content Include="images\carousel\blood_donation_02.jpg" />
+    <Content Include="images\carousel\blood_donation_03.jpg" />
     <Content Include="images\exit_icon.png" />
     <Content Include="images\logo.png" />
     <Content Include="images\menu-overflow.png" />

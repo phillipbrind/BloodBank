@@ -37,7 +37,9 @@
             </div>
         </div>
     </div>
-    @RenderBody()
+    <div class="container-fluid" id="body-content">
+        @RenderBody()
+    </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
