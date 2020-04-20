@@ -1,114 +1,94 @@
 ﻿a {
     color: #000000;
-    transition: color 300ms ease-out;
 }
 
     a:hover {
-        color: #F1562A;
         text-decoration: none;
-        transition: color 300ms ease-out;
+        color: #F1562A;
+        transition: color 0.4s ease 0s;
     }
 
-.my-border {
-    border: 1px solid red;
-}
-
 /* Shared Layout */
-.upper-header {
-    background-color: #F7F9FA;
-    position: fixed;
-    top: 0px;
-    width: 100%;
-    z-index: 1;
+/* Left Navigation */
+.navbar {
+    padding: 0;
+    background-image: linear-gradient(#F1F5F7, #FFFFFF);
+    justify-content: space-between;
 }
 
-.logo-img {
-    margin: 15px 5px;
+.logo-image {
     height: 47px;
+    padding-left: 16px;
 }
 
 .logo-title {
-    padding-left: 10px;
-    font: bold 1.1em Arial, Helvetica, sans-serif;
     text-transform: uppercase;
+    font: 900 17px poppins-semibold, poppins, sans-serif;
 }
 
-.logged-user {
-    font: 1em Arial, Helvetica, sans-serif;
-    text-transform: none;
+/* Right Navigation */
+.nav-login {
+    align-self: center;
+    font: 14px avenir-lt-w01_85-heavy1475544, sans-serif;
+    padding: 0 20px;
 }
 
-    .logged-user img {
-        height: 20px;
+.dropdown-menu {
+    margin-top: 20px;
+    min-width: 0;
+    border: 0;
+}
+
+.dropdown-item {
+    font: 14px avenir-lt-w01_85-heavy1475544, sans-serif;
+    text-transform: capitalize;
+}
+
+    .dropdown-item:hover {
+        color: #F1562A;
+        transition: color 0.4s ease 0s;
     }
 
-.user-menu {
-    list-style-type: none;
-    font: 1.1em Arial, Helvetica, sans-serif;
-    position: absolute;
-    top: 75px;
-    right: 15px;
-    text-align: start;
-    background-color: #F7F9FA;
-    padding: 5px 20px 20px 20px;
-    display: none;
-}
-
-.user-menu-line {
-    background-color: #000000;
-    width: 75px;
-    height: 1px;
-    display: block;
-    margin: 15px 0px;
-}
-
-.login {
-    padding: 29px;
-    font: 0.8em Arial, Helvetica, sans-serif;
-    text-align: end;
-    text-transform: capitalize;
-}
-
-.donate-now {
-    padding: 32px;
-    font: bold 0.8em Arial, Helvetica, sans-serif;
+.nav-home,
+.nav-about,
+.nav-services,
+.nav-contact {
+    width: 154px;
+    height: 77px;
     text-align: center;
+    font: 14px avenir-lt-w01_85-heavy1475544, sans-serif;
     text-transform: capitalize;
+}
+
+.nav-home {
     background-color: #F1562A;
-    transition: background-color 400ms ease-out;
 }
 
-    .donate-now:hover {
-        background-color: #000000;
-        transition: background-color 400ms ease-out;
-    }
+.nav-about {
+    background-color: #F89825;
+}
 
-    .donate-now a {
-        color: #FFFFFF;
-    }
+.nav-services {
+    background-color: #7EB7E4;
+}
 
-.menu-overflow {
-    padding: 32px;
-    font: bold 0.8em Arial, Helvetica, sans-serif;
-    text-align: center;
-    text-transform: capitalize;
+.nav-contact {
     background-color: #000000;
 }
 
-    .menu-overflow a {
-        color: #FFFFFF;
-    }
+.nav-link {
+    line-height: 440%;
+    color: #FFFFFF;
+}
 
-        .menu-overflow a:hover {
-            color: #F1562A;
-        }
+.contact-link {
+    line-height: 550%;
+    color: #FFFFFF;
+}
 
-    .menu-overflow img {
-        margin-left: 20px;
-    }
-
-#body-content {
-    margin-top: 78px;
+.nav-link:hover {
+    background-color: #000000;
+    transition: background-color 0.4s ease 0s;
 }
 
 /* Login Page */
