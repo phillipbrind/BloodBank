@@ -380,14 +380,12 @@
     }
 
 /* Home Page */
-
 .carousel-inner img {
     width: 100%;
     height: 642px;
 }
 
-#statistics {
-    background-color: #FFFFFF;
+.statistics {
     padding: 130px 0;
 }
 
@@ -400,6 +398,47 @@
     font: 600 2.3em Arial, Helvetica, sans-serif;
 }
 
-#statistics .card {
-    border: none;
+/* About Page */
+.banner {
+    width: 100%;
+    height: 642px;
+}
+
+.privacy-policy-card {
+    padding: 100px 120px;
+}
+
+.privacy-policy-title {
+    font: 900 3.8em Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+
+.privacy-policy-content {
+    padding: 100px 130px 0 0;
+    letter-spacing: 0.02em;
+}
+
+/* Services */
+.procedure-title {
+    font: 900 3.3em Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+
+.procedure li {
+    padding: 15px 0;
+}
+
+.benefits-card {
+    padding: 50px 120px;
+}
+
+/* Contact */
+.contact-media-card {
+    height: 100px;
+    width: 106px;
+    align-self: center;
+}
+
+.contact-media-image {
+    padding-top: 25px;
 }

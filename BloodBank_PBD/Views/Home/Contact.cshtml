@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+}
+
+<div>
+    <img src="~/images/contact.jpg" alt="contact.jpg" class="banner" />
+</div>
+<div class="card-group">
+    <div class="card">
+        <div class="card-body">
+            <div class="row justify-content-center">@Html.TextBox("name", null, new { @class = "txt", placeholder = "Name" })</div>
+            <div class="row justify-content-center"><span id="name-line" class="line"></span></div>
+
+            <div class="row justify-content-center">@Html.TextBox("email", null, new { @class = "txt", type = "email", placeholder = "Email" })</div>
+            <div class="row justify-content-center"><span id="email-line" class="line"></span></div>
+
+            <div class="row justify-content-center">@Html.TextBox("phone", null, new { @class = "txt", placeholder = "Phone", type = "tel" })</div>
+            <div class="row justify-content-center"><span id="phone-line" class="line"></span></div>
+
+            <div class="row justify-content-center">@Html.TextBox("subject", null, new { @class = "txt", placeholder = "Subject" })</div>
+            <div class="row justify-content-center"><span id="name-line" class="line"></span></div>
+            
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-group">
+            <div class="card">
+                <div class="card-body">
+                    <h6>ADDRESS</h6>
+                    <p>500 Terry Francois St.<br>San Francisco, CA 94158</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                <h6>PHONE</h6>
+                <p>123-456-7890</p>
+                    </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h6>EMAIL</h6>
+                    <p>info@mysite.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck">
+            <div class="card text-center text contact-media-card">
+                <div class="card-img contact-media-image"><i class="fab fa-facebook-f"></i></div>
+                <div class="card-text">Facebook</div>
+            </div>
+            <div class="card text-center contact-media-card">
+                <div class="card-img contact-media-image"><i class="fab fa-twitter"></i></div>
+                <div class="card-text">Twitter</div>
+            </div>
+            <div class="card text-center contact-media-card">
+                <div class="card-img contact-media-image"><i class="fab fa-instagram"></i></div>
+                <div class="card-text">Instagram</div>
+            </div>
+            <div class="card text-center contact-media-card">
+                <div class="card-img contact-media-image"><i class="fab fa-youtube"></i></div>
+                <div class="card-text">YouTube</div>
+            </div>
+        </div>
+    </div>
+</div>

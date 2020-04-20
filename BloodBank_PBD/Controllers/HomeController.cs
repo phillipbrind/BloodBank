@@ -63,5 +63,20 @@ namespace BloodBank_PBD.Controllers
 
             return View("Index");
         }
+
+        public ActionResult About()
+        {
+            return View();
+        }
+
+        public ActionResult Services()
+        {
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            return View();
+        }
     }
 }

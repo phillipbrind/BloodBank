@@ -24,6 +24,7 @@ namespace BloodBank_PBD
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/fontawesome-all.css",
                       "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/custom").Include(
