@@ -4,32 +4,34 @@
     ViewBag.Title = "Login";
 }
 
-<div class="container login-content">
-    <div class="row justify-content-end"><a href="@Url.Action("Index", "Home")"><img src="~/images/exit_icon.png" alt="exit_icon" /></a></div>
-    <div class="row justify-content-center login-user">log in</div>
-    <div class="row justify-content-center new-user">new to this site?@Html.ActionLink("sign up", "SignUp", "Home")</div>
-    @using (Html.BeginForm())
-    {
-        <div class="row justify-content-center user-input">
-            @Html.TextBoxFor(m => m.UserName, new { id = "user", maxlength = "20", required = "" })
-            @Html.LabelFor(m => m.UserName)
+<div class="container d-flex justify-content-center pt-5">
+    <div class="card login-card">
+        <div class="card-title text-center">
+            <span class="login-title">log in</span>
+            <div class="new-user">
+                New to this site?
+                @Html.ActionLink("sign up", "SignUp", "Home", null, new { @class = "signup-link" })
+            </div>
         </div>
-        <div class="row justify-content-center input-line"><span id="user-line"></span></div>
-        if (ViewBag.UserError != null)
-        {
-            <div class="user-login-error">@ViewBag.UserError</div>
-        }
-
-        <div class="row justify-content-center user-input">
-            @Html.PasswordFor(m => m.Password, new { id = "password", maxlength = "20", required = "" })
-            @Html.LabelFor(m => m.Password)
+        <div class="card-body">
+            @section Scripts {
+                <script src="~/Scripts/jquery.validate.min.js"></script>
+                <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+            }
+            @using (Html.BeginForm())
+            {
+                <div class="form-group">
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control user-txt", required = "" })
+                    @Html.LabelFor(m => m.UserName, new { @class = "user-label" })
+                </div>
+                <div class="user-error">@Html.ValidationMessageFor(m => m.UserName, null, new { @class = "text-danger" })</div>
+                <div class="form-group">
+                    @Html.TextBoxFor(m => m.Password, new { @class = "form-control user-txt", type = "password", required = "" })
+                    @Html.LabelFor(m => m.Password, new { @class = "user-label" })
+                </div>
+                <div class="password-error">@Html.ValidationMessageFor(m => m.Password, null, new { @class = "text-danger" })</div>
+                <div class="login-btn"><input type="submit" value="log in"></div>
+            }
         </div>
-        <div class="row justify-content-center input-line"><span id="password-line"></span></div>
-        if (ViewBag.PasswordError != null)
-        {
-            <div class="pass-login-error">@ViewBag.PasswordError</div>
-        }
-        <div class="row justify-content-center"><a href="#" class="forgot-pass">Forgot password?</a></div>
-        <div class="row justify-content-center login-btn"><input type="submit" value="log in"></div>
-    }
+    </div>
 </div>

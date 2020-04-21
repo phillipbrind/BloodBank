@@ -4,81 +4,79 @@
     ViewBag.Title = "My Account";
 }
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-4 d-flex justify-content-end">
-            <div class="card user-avatar">
-                <div><i class="fas fa-user-circle"></i></div>
-                <div class="user">pdespi</div>
-                <div class="role">admin</div>
-                <div><input type="button" value="Edit" class="btn btn-outline-danger btn-block" id="edit-btn" /></div>
-            </div>
+<div class="row">
+    <div class="col-md-4 d-flex justify-content-end">
+        <div class="card user-avatar">
+            <div><i class="fas fa-user-circle"></i></div>
+            <div class="user">pdespi</div>
+            <div class="role">admin</div>
+            <div><input type="button" value="Edit" class="btn btn-outline-danger btn-block" id="edit-btn" /></div>
         </div>
-        <div class="col-md-8 user-info">
-            <h2>My Account</h2>
-            <p>View or Edit your personal info below.</p>
-            <hr />
-            <form>
-                <div class="card-group">
-                    <div class="card border-0">
-                        <div class="card-body card-left">
-                            <div class="form-group">
-                                @Html.LabelFor(m => m.FirstName)
-                                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", disabled = "true" })
-                            </div>
-                            <div class="form-group">
-                                @Html.LabelFor(m => m.Age)
-                                @Html.TextBoxFor(m => m.Age, new { @class = "form-control", type = "number", disabled = "true" })
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card border-0">
-                        <div class="card-body card-right">
-                            <div class="form-group">
-                                @Html.LabelFor(m => m.LastName)
-                                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", disabled = "true" })
-                            </div>
-                            <div class="form-group">
-                                @Html.LabelFor(m => m.BloodType)
-                                @Html.TextBoxFor(m => m.BloodType, new { @class = "form-control", disabled = "true" })
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
+    </div>
+    <div class="col-md-8 user-info">
+        <h2>My Account</h2>
+        <p>View or Edit your personal info below.</p>
+        <hr />
+        <form>
+            <div class="card-group">
+                <div class="card border-0">
+                    <div class="card-body card-left">
                         <div class="form-group">
-                            @Html.LabelFor(m => m.Location)
-                            @Html.TextBoxFor(m => m.Location, new { @class = "form-control", disabled = "true" })
+                            @Html.LabelFor(m => m.FirstName)
+                            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", disabled = "true" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Age)
+                            @Html.TextBoxFor(m => m.Age, new { @class = "form-control", type = "number", disabled = "true" })
                         </div>
                     </div>
                 </div>
-                <div class="card-group">
-                    <div class="card border-0 username-card">
-                        <div class="card-body card-left">
-                            <div class="form-group username-group">
-                                @Html.LabelFor(m => m.UserName)
-                                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" value="Update Info" class="update-btn btn-block" id="update-btn" />
-                            </div>
+                <div class="card border-0">
+                    <div class="card-body card-right">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.LastName)
+                            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", disabled = "true" })
                         </div>
-                    </div>
-                    <div class="card border-0 password-card">
-                        <div class="card-body card-right">
-                            <div class="form-group">
-                                @Html.LabelFor(m => m.Password)
-                                @Html.TextBoxFor(m => m.Password, new { @class = "form-control", type = "password" })
-                            </div>
-                            <div class="form-group">
-                                @Html.Label("confirm-pass", "Confirm Password")
-                                @Html.TextBox("confirm-pass", null, new { @class = "form-control", type = "password" })
-                            </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.BloodType)
+                            @Html.TextBoxFor(m => m.BloodType, new { @class = "form-control", disabled = "true" })
                         </div>
                     </div>
                 </div>
-            </form>
-        </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Location)
+                        @Html.TextBoxFor(m => m.Location, new { @class = "form-control", disabled = "true" })
+                    </div>
+                </div>
+            </div>
+            <div class="card-group">
+                <div class="card border-0 username-card">
+                    <div class="card-body card-left">
+                        <div class="form-group username-group">
+                            @Html.LabelFor(m => m.UserName)
+                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Update Info" class="update-btn btn-block" id="update-btn" />
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-0 password-card">
+                    <div class="card-body card-right">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Password)
+                            @Html.TextBoxFor(m => m.Password, new { @class = "form-control", type = "password" })
+                        </div>
+                        <div class="form-group">
+                            @Html.Label("confirm-pass", "Confirm Password")
+                            @Html.TextBox("confirm-pass", null, new { @class = "form-control", type = "password" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
