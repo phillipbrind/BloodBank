@@ -190,17 +190,13 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="images\about_us.jpg" />
-    <Content Include="images\arrow_down_icon.png" />
     <Content Include="images\carousel\blood_donation_01.jpg" />
     <Content Include="images\carousel\blood_donation_02.jpg" />
     <Content Include="images\carousel\blood_donation_03.jpg" />
     <Content Include="images\contact.jpg" />
-    <Content Include="images\exit_icon.png" />
     <Content Include="images\give_blood.jpeg" />
     <Content Include="images\logo.png" />
-    <Content Include="images\menu-overflow.png" />
     <Content Include="images\services.jpg" />
-    <Content Include="images\user_avatar.png" />
     <Content Include="Models\BloodBankDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BloodBankDB.Context.cs</LastGenOutput>

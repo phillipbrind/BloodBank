@@ -1,4 +1,8 @@
-﻿a {
+﻿.my-border {
+    border: 1px solid red;
+}
+
+a {
     color: #000000;
 }
 
@@ -7,6 +11,10 @@
         color: #F1562A;
         transition: color 0.4s ease 0s;
     }
+
+.container-fluid {
+    margin: 77px 0;
+}
 
 /* Shared Layout */
 /* Left Navigation */
@@ -196,55 +204,6 @@
             transition: opacity 400ms ease-out;
         }
 
-/* Menu Page */
-.menu-content {
-    margin: 30px 15px;
-}
-
-.menu-logo {
-    margin-left: 30px;
-}
-
-.menu {
-    font: bold 1.8em Arial, Helvetica, sans-serif;
-    text-transform: uppercase;
-}
-
-    .menu li {
-        display: inline-block;
-        padding: 5px 25px;
-    }
-
-        .menu li ul {
-            width: 300px;
-            position: absolute;
-            text-align: center;
-            top: 190px;
-            right: 190px;
-            display: none;
-        }
-
-        .menu li:hover ul {
-            display: block;
-        }
-
-.donate-btn {
-    margin-top: 30px;
-    width: 250px;
-    height: 45px;
-    text-transform: capitalize;
-    background-color: #F1562A;
-    color: #FFFFFF;
-    border: none;
-    font: bold 0.8em Arial, Helvetica, sans-serif;
-    transition: background-color 400ms ease-out;
-}
-
-    .donate-btn:hover {
-        background-color: #000000;
-        transition: background-color 400ms ease-out;
-    }
-
 /* SignUp Page */
 .sign-user {
     font: bold 3em Arial, Helvetica, sans-serif;
@@ -303,11 +262,7 @@
     padding: 25px 0px 20px 0px;
 }
 
-/* User Page*/
-.user-info-container {
-    margin-top: 75px;
-}
-
+/* View User Information - User */
 .user-avatar {
     width: 250px;
     height: 258px;
@@ -316,34 +271,46 @@
     margin: 50px 15px 0px 0px;
 }
 
-    .user-avatar img {
-        width: 80px;
-        height: 80px;
-    }
+.fas.fa-user-circle {
+    font-size: 5.4em;
+}
 
 .user {
     margin-top: 10px;
-    font: 1em Arial, Helvetica, sans-serif;
+    font: 16px avenir-lt-w01_35-light1475496, sans-serif;
 }
 
 .role {
     margin: 5px 0px 20px 0px;
-    font: 0.7em Arial, Helvetica, sans-serif;
+    font: 12px avenir-lt-w01_35-light1475496, sans-serif;
     text-transform: capitalize;
 }
 
 .user-info {
-    padding: 80px 130px 80px 20px;
+    padding: 50px 130px 80px 20px;
+    font: 15px avenir-lt-w01_35-light1475496, sans-serif;
 }
 
     .user-info h2 {
-        font: bold 1.5em Arial, Helvetica, sans-serif;
+        font: 900 26px poppins-semibold, poppins, sans-serif;
         text-transform: capitalize;
     }
 
     .user-info p {
-        font: 0.9em Arial, Helvetica, sans-serif;
+        font: 15px avenir-lt-w01_35-light1475496, sans-serif;
     }
+
+.card-left {
+    padding-left: 0;
+}
+
+.card-right {
+    padding-right: 0;
+}
+
+.username-group {
+    margin-bottom: 40px;
+}
 
 .update-btn {
     text-transform: capitalize;
@@ -351,13 +318,20 @@
     color: #FFFFFF;
     border: none;
     height: 40px;
-    display: none;
 }
 
     .update-btn:hover {
         opacity: 0.7;
         transition: opacity 400ms ease-out;
     }
+
+.username-card {
+    display: none;
+}
+
+.password-card {
+    display: none;
+}
 
 /* Home Page */
 .carousel-inner img {
