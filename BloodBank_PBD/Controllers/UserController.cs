@@ -15,29 +15,34 @@ namespace BloodBank_PBD.Controllers
 
         public ActionResult CreateUser(User user)
         {
-            user.Password = Convert.ToBase64String(System.Security.Cryptography.SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(user.Password)));
+            if (ModelState.IsValid)
+            {
+                user.Password = Convert.ToBase64String(System.Security.Cryptography.SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(user.Password)));
 
-            try
-            {
-                db.Users.Add(user);
-                db.SaveChanges();
-            }
-            catch (DbEntityValidationException e)
-            {
-                foreach (var ex in e.EntityValidationErrors)
+                try
                 {
-                    Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:", ex.Entry.Entity.GetType().Name, ex.Entry.State);
-
-                    foreach (var se in ex.ValidationErrors)
-                    {
-                        Debug.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
-                            se.PropertyName, se.ErrorMessage);
-                    }
+                    db.Users.Add(user);
+                    db.SaveChanges();
                 }
-                throw;
+                catch (DbEntityValidationException e)
+                {
+                    foreach (var ex in e.EntityValidationErrors)
+                    {
+                        Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:", ex.Entry.Entity.GetType().Name, ex.Entry.State);
+
+                        foreach (var se in ex.ValidationErrors)
+                        {
+                            Debug.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                                se.PropertyName, se.ErrorMessage);
+                        }
+                    }
+                    throw;
+                }
+
+                return RedirectToAction("Index", "Home");
             }
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("SignUp", "Home", user);
         }
 
         public ActionResult UpdateUser(int id)

@@ -138,13 +138,9 @@
         $("#confirm-pass-line").css("height", "1px")
     });
 
-    if ($("#confirm-pass").val() == "") {
-        $("#error-message").toggle();
-    }
-
     $("#signup-btn").click(function () {
-        if ($("#confirm-pass").val() != $("#password").val()) {
-            $("#error-message").toggle();
+        if ($("#ConfirmPassword").val() != $("#Password").val()) {
+            $("#password-mismatch-error").show();
             return false;
         }
     });

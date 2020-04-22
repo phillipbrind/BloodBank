@@ -23,28 +23,34 @@ namespace BloodBank_PBD.Models
         [Key]
         public int UserId { get; set; }
         [Display(Name = "First Name")]
-        [Required]
-        [MaxLength(30)]
+        [Required(ErrorMessage = "First Name cannot be blank")]
+        [MaxLength(30, ErrorMessage = "Do not enter more than 30 characters")]
         public string FirstName { get; set; }
         [Display(Name = "Last Name")]
-        [Required]
-        [MaxLength(30)]
+        [Required(ErrorMessage = "Last Name cannot be blank")]
+        [MaxLength(30, ErrorMessage = "Do not enter more than 30 characters")]
         public string LastName { get; set; }
         [Display(Name = "Address")]
-        [Required]
-        [MaxLength(60)]
+        [Required(ErrorMessage = "Address cannot be blank")]
+        [MaxLength(60, ErrorMessage = "Do not enter more than 60 characters")]
         public string Location { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Age cannot be blank")]
+        [Range(16, 60, ErrorMessage = "Age allowed is between 16 to 60")]
         public int Age { get; set; }
         [Display(Name = "Blood Type")]
-        [Required]
+        [Required(ErrorMessage = "Make sure you select a blood type.")]
         [MaxLength(3)]
         public string BloodType { get; set; }
-        [Required]
-        [MaxLength(20)]
+        [Display(Name = "Username")]
+        [Required(ErrorMessage = "Username cannot be blank")]
+        [MaxLength(20, ErrorMessage = "Do not enter more than 20 characters")]
         public string UserName { get; set; }
+        [Required(ErrorMessage = "Make sure you enter a password.")]
         [MaxLength(50)]
         public string Password { get; set; }
+        [Required(ErrorMessage = "Make sure you enter a password.")]
+        [MaxLength(50)]
+        public string ConfirmPassword { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Test> Tests { get; set; }

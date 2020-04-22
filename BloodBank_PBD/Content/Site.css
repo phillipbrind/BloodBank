@@ -148,14 +148,16 @@ a {
     font-size: 12px;
 }
 
-.user-error {
+.text-danger {
     font: 12px avenir-lt-w01_35-light1475496,sans-serif;
+}
+
+.user-error {
     position: absolute;
     top: 150px;
 }
 
 .password-error {
-    font: 12px avenir-lt-w01_35-light1475496,sans-serif;
     position: absolute;
     top: 230px;
 }
@@ -180,55 +182,19 @@ a {
         }
 
 /* SignUp Page */
-.sign-user {
-    font: bold 3em Arial, Helvetica, sans-serif;
-    text-transform: capitalize;
-    padding-bottom: 30px;
-}
-
-.txt {
-    border: none;
+.new-user-txt {
+    width: 320px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    font: 16px avenir-lt-w01_35-light1475496,sans-serif;
     box-shadow: none;
-    width: 250px;
+    padding-top: 14px;
 }
 
-.line {
-    width: 250px;
-    background-color: #000000;
-    height: 1px;
-    margin-bottom: 50px;
+.password-mismatch-error {
+    display: none;
 }
-
-#fname-line, #age-line, #address-line, #username-line {
-    height: 0.5px;
-}
-
-.error-message {
-    position: absolute;
-    top: 740px;
-    left: 460px;
-    font: 1em Arial, Helvetica, sans-serif;
-    color: #DC3545;
-}
-
-.signup-btn {
-    width: 250px;
-    height: 50px;
-    text-transform: capitalize;
-    background-color: #000000;
-    color: #FFFFFF;
-    border: none;
-}
-
-.login-link {
-    font: bold 1em Arial, Helvetica, sans-serif;
-    text-transform: capitalize;
-    padding: 4px 5px;
-}
-
-    .login-link:hover {
-        color: #000000;
-    }
 
 /* Admin Page */
 .admin-menu {

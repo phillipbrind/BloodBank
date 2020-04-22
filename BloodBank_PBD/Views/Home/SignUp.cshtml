@@ -4,36 +4,57 @@
     ViewBag.Title = "Sign Up";
 }
 
-<div class="container login-content">
-    <div class="row justify-content-center sign-user">sign up</div>
-    @using (Html.BeginForm("CreateUser", "User"))
-    {
-        <div class="row justify-content-center">@Html.TextBoxFor(m => m.FirstName, new { @class = "txt", id = "firstname", placeholder = "First Name", maxlength = "30", required = "true" })</div>
-        <div class="row justify-content-center"><span id="fname-line" class="line"></span></div>
-
-        <div class="row justify-content-center">@Html.TextBoxFor(m => m.LastName, new { @class = "txt", id = "lastname", placeholder = "Last Name", maxlength = "30", required = "true" })</div>
-        <div class="row justify-content-center"><span id="lname-line" class="line"></span></div>
-
-        <div class="row justify-content-center">@Html.TextBoxFor(m => m.Age, new { @class = "txt", id = "age", placeholder = "Age", type = "number", required = "true" })</div>
-        <div class="row justify-content-center"><span id="age-line" class="line"></span></div>
-
-        <div class="row justify-content-center">@Html.TextBoxFor(m => m.Location, new { @class = "txt", id = "address", placeholder = "Address", maxlength = "60", required = "true" })</div>
-        <div class="row justify-content-center"><span id="address-line" class="line"></span></div>
-
-        <div class="row justify-content-center">@Html.TextBoxFor(m => m.BloodType, new { @class = "txt", id = "blood-type", placeholder = "Blood Type", maxlength = "3", required = "true" })</div>
-        <div class="row justify-content-center"><span id="bloodtype-line" class="line"></span></div>
-
-        <div class="row justify-content-center">@Html.TextBoxFor(m => m.UserName, new { @class = "txt", id = "username", placeholder = "Username", maxlength = "20", required = "true" })</div>
-        <div class="row justify-content-center"><span id="username-line" class="line"></span></div>
-
-        <div class="row justify-content-center">@Html.PasswordFor(m => m.Password, new { @class = "txt", id = "password", placeholder = "Password", type = "password", maxlength = "20", required = "true" })</div>
-        <div class="row justify-content-center"><span id="password-line" class="line"></span></div>
-
-        <div class="row justify-content-center">@Html.Password("confirm-pass", "", new { @class = "txt", placeholder = "Confirm Password", type = "password", maxlength = "20", required = "true" })</div>
-        <div class="row justify-content-center"><span id="confirm-pass-line" class="line"></span></div>
-        <div class="row justify-content-center"><span id="error-message" class="error-message">Password didn't match</span></div>
-
-        <div class="row justify-content-center"><input type="submit" value="sign up" class="signup-btn" id="signup-btn" /></div>
-    }
-    <div class="row justify-content-center">Already a member?@Html.ActionLink("log in", "Login", "Home", null, new { @class = "login-link" })</div>
+<div class="container d-flex justify-content-center pt-5">
+    <div class="card login-card">
+        <div class="card-title text-center">
+            <span class="login-title">sign up</span>
+        </div>
+        <div class="card-body">
+            @section Scripts {
+                <script src="~/Scripts/jquery.validate.min.js"></script>
+                <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+            }
+            @using (Html.BeginForm("CreateUser", "User"))
+            {
+                <div class="form-group">
+                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control new-user-txt", placeholder = "First Name" })
+                    @Html.ValidationMessageFor(m => m.FirstName, null, new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control new-user-txt", placeholder = "Last Name" })
+                    @Html.ValidationMessageFor(m => m.LastName, null, new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.TextBoxFor(m => m.Age, new { @class = "form-control new-user-txt", placeholder = "Age", type = "number" })
+                    @Html.ValidationMessageFor(m => m.Age, null, new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.TextBoxFor(m => m.Location, new { @class = "form-control new-user-txt", placeholder = "Address" })
+                    @Html.ValidationMessageFor(m => m.Location, null, new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.DropDownListFor(m => m.BloodType, ViewBag.BloodTypes as SelectList, "Blood Type", new { @class = "form-control new-user-txt" })
+                    @Html.ValidationMessageFor(m => m.BloodType, null, new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control new-user-txt", placeholder = "Username" })
+                    @Html.ValidationMessageFor(m => m.UserName, null, new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.TextBoxFor(m => m.Password, new { @class = "form-control new-user-txt", placeholder = "Password", type = "password" })
+                    @Html.ValidationMessageFor(m => m.Password, null, new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.TextBoxFor(m => m.ConfirmPassword, null, new { @class = "form-control new-user-txt", placeholder = "Confirm Password", type = "password" })
+                    @Html.ValidationMessageFor(m => m.ConfirmPassword, null, new { @class = "text-danger" })
+                    <span class="text-danger password-mismatch-error" id="password-mismatch-error">Password doesn't match</span>
+                </div>
+                <div class="login-btn mt-5"><input type="submit" value="sign up" id="signup-btn"></div>
+            }
+            <div class="new-user">
+                Already a member?
+                @Html.ActionLink("log in", "Login", "Home", null, new { @class = "signup-link" })
+            </div>
+        </div>
+    </div>
 </div>

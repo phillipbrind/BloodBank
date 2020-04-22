@@ -54,6 +54,9 @@ namespace BloodBank_PBD.Controllers
 
         public ActionResult SignUp()
         {
+            string[] bloodTypes = { "O-", "O+", "A-", "A+", "B-", "B+", "AB-", "AB+" };
+            ViewBag.BloodTypes = new SelectList(bloodTypes);
+
             return View();
         }
 

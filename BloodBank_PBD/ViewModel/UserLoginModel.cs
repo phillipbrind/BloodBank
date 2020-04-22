@@ -4,9 +4,12 @@ namespace BloodBank_PBD.ViewModel
 {
     public class UserLoginModel
     {
-        [Required(ErrorMessage = "Username cannot be blank", AllowEmptyStrings = false)]
+        [Display(Name = "Username")]
+        [Required(ErrorMessage = "Username cannot be blank")]
+        [MaxLength(20, ErrorMessage = "Do not enter more than 20 characters")]
         public string UserName { get; set; }
-        [Required(ErrorMessage = "Make sure you enter a password.", AllowEmptyStrings = false)]
+        [Required(ErrorMessage = "Make sure you enter a password.")]
+        [MaxLength(20, ErrorMessage = "Do not enter more than 20 characters")]
         public string Password { get; set; }
     }
 }
