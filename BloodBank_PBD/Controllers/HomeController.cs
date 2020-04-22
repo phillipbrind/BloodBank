@@ -30,16 +30,14 @@ namespace BloodBank_PBD.Controllers
 
                 return View(ulm);
             }
-            else
+
+            string encrypted_pass = Convert.ToBase64String(System.Security.Cryptography.SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(ulm.Password)));
+
+            if (db.Users.Where(x => x.UserName.Equals(ulm.UserName) && x.Password.Equals(encrypted_pass)).Count() == 0)
             {
-                string encrypted_pass = Convert.ToBase64String(System.Security.Cryptography.SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(ulm.Password)));
+                ViewBag.PasswordError = "You entered an incorrect password";
 
-                if (db.Users.Where(x => x.UserName.Equals(ulm.UserName) && x.Password.Equals(encrypted_pass)).Count() == 0)
-                {
-                    ViewBag.PasswordError = "You entered an incorrect password";
-
-                    return View(ulm);
-                }
+                return View(ulm);
             }
 
             Session["Username"] = ulm.UserName;
@@ -58,6 +56,14 @@ namespace BloodBank_PBD.Controllers
             ViewBag.BloodTypes = new SelectList(bloodTypes);
 
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult SignUp(User user)
+        {
+            System.Diagnostics.Debug.WriteLine("phdespi: " + user.UserName);
+
+            return View(user);
         }
 
         public ActionResult Logout()

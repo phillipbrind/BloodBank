@@ -13,10 +13,18 @@ namespace BloodBank_PBD.Controllers
     {
         private Blood_Bank_Entities db = new Blood_Bank_Entities();
 
+        [HttpPost]
         public ActionResult CreateUser(User user)
         {
             if (ModelState.IsValid)
             {
+                if (db.Users.Where(x => x.UserName.Equals(user.UserName)).Count() != 0)
+                {
+                    ViewBag.UserExistError = "User already exists";
+
+                    return RedirectToAction("SignUp", "Home", user);
+                }
+
                 user.Password = Convert.ToBase64String(System.Security.Cryptography.SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(user.Password)));
 
                 try

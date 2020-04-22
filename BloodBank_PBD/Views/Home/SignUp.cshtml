@@ -39,6 +39,7 @@
                 <div class="form-group">
                     @Html.TextBoxFor(m => m.UserName, new { @class = "form-control new-user-txt", placeholder = "Username" })
                     @Html.ValidationMessageFor(m => m.UserName, null, new { @class = "text-danger" })
+                    <span class="text-danger">@ViewBag.UserExistError</span>
                 </div>
                 <div class="form-group">
                     @Html.TextBoxFor(m => m.Password, new { @class = "form-control new-user-txt", placeholder = "Password", type = "password" })

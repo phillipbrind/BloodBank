@@ -24,12 +24,18 @@
                     @Html.TextBoxFor(m => m.UserName, new { @class = "form-control user-txt", required = "" })
                     @Html.LabelFor(m => m.UserName, new { @class = "user-label" })
                 </div>
-                <div class="user-error">@Html.ValidationMessageFor(m => m.UserName, null, new { @class = "text-danger" })</div>
+                <div class="user-error">
+                    @Html.ValidationMessageFor(m => m.UserName, null, new { @class = "text-danger" })
+                    <span class="text-danger">@ViewBag.UserError</span>
+                </div>
                 <div class="form-group">
                     @Html.TextBoxFor(m => m.Password, new { @class = "form-control user-txt", type = "password", required = "" })
                     @Html.LabelFor(m => m.Password, new { @class = "user-label" })
                 </div>
-                <div class="password-error">@Html.ValidationMessageFor(m => m.Password, null, new { @class = "text-danger" })</div>
+                <div class="password-error">
+                    @Html.ValidationMessageFor(m => m.Password, null, new { @class = "text-danger" })
+                    <span class="text-danger">@ViewBag.PasswordError</span>
+                </div>
                 <div class="login-btn"><input type="submit" value="log in"></div>
             }
         </div>
