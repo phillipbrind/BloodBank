@@ -57,6 +57,7 @@ namespace BloodBank_PBD.Controllers
         public ActionResult UpdateUser(int id)
         {
             User user = db.Users.Find(id);
+            ViewBag.BloodTypes = new SelectList(bloodTypes);
 
             return View(user);
         }
@@ -138,8 +139,11 @@ namespace BloodBank_PBD.Controllers
         public ActionResult DeleteUser(int id)
         {
             User user = db.Users.Find(id);
-            db.Users.Remove(user);
-            db.SaveChanges();
+            if (user != null)
+            {
+                db.Users.Remove(user);
+                db.SaveChanges();
+            }
 
             return RedirectToAction("GetAllUsers");
         }

@@ -203,6 +203,15 @@ a {
     padding: 25px 0px 20px 0px;
 }
 
+.admin-btn {
+    width: 250px;
+    height: 40px;
+    margin: 10px 0 0 15px;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    text-align: center;
+    line-height: 250%;
+}
+
 /* View User Information - User */
 .user-avatar {
     width: 250px;
@@ -228,8 +237,8 @@ a {
 }
 
 .user-info {
-    padding: 50px 130px 80px 20px;
     font: 15px avenir-lt-w01_35-light1475496, sans-serif;
+    padding: 70px;
 }
 
     .user-info h2 {

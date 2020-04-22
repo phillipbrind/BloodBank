@@ -4,93 +4,121 @@
     ViewBag.Title = "My Account";
 }
 
-<div class="row">
-    <div class="col-md-4 d-flex justify-content-end">
-        <div class="card user-avatar">
-            <div><i class="fas fa-user-circle"></i></div>
-            <div class="user">pdespi</div>
-            <div class="role">admin</div>
-            <div><input type="button" value="Edit" class="btn btn-outline-danger btn-block" id="edit-btn" /></div>
+@section Scripts {
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-3">
+            <div class="container">
+                <div class="card user-avatar">
+                    <div class="card-body">
+                        <div><i class="fas fa-user-circle"></i></div>
+                        <div class="user">@Html.DisplayFor(m => m.UserName)</div>
+                        <div class="role">admin</div>
+                        <div><input type="button" value="Edit" class="btn btn-outline-danger btn-block" id="edit-btn" /></div>
+                    </div>
+                </div>
+            </div>
+            <div class="admin-btn">
+                @Ajax.ActionLink("View all Users", "GetAllUsers", new AjaxOptions
+           {
+
+               HttpMethod = "GET",
+               UpdateTargetId = "user-div",
+               InsertionMode = InsertionMode.Replace
+
+           })
+            </div>
+            <div class="admin-btn">
+                @Ajax.ActionLink("View all Tests", "GetAllTests", new AjaxOptions
+           {
+
+               HttpMethod = "GET",
+               UpdateTargetId = "user-div",
+               InsertionMode = InsertionMode.Replace
+
+           })
+            </div>
         </div>
-    </div>
-    <div class="col-md-8 user-info">
-        <h2>My Account</h2>
-        <p>View or Edit your personal info below.</p>
-        <hr />
-        @section Scripts {
-            <script src="~/Scripts/jquery.validate.min.js"></script>
-            <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-        }
-        @using (Html.BeginForm())
-        {
-            <div class="card-group">
-                <div class="card border-0">
-                    <div class="card-body card-left">
-                        <div class="form-group">
-                            @Html.HiddenFor(m => m.UserId)
-                            @Html.LabelFor(m => m.FirstName)
-                            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", disabled = "true" })
-                            @Html.ValidationMessageFor(m => m.FirstName, null, new { @class = "text-danger" })
+        <div class="col-md-9 user-info" id="user-div">
+            <h2>My Account</h2>
+            <p>View or Edit your personal info below.</p>
+            <hr />
+            @using (Html.BeginForm())
+            {
+                <div class="card-group">
+                    <div class="card border-0">
+                        <div class="card-body card-left">
+                            <div class="form-group">
+                                @Html.HiddenFor(m => m.UserId)
+                                @Html.LabelFor(m => m.FirstName)
+                                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", disabled = "true" })
+                                @Html.ValidationMessageFor(m => m.FirstName, null, new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Age)
+                                @Html.TextBoxFor(m => m.Age, new { @class = "form-control", type = "number", disabled = "true" })
+                                @Html.ValidationMessageFor(m => m.Age, null, new { @class = "text-danger" })
+                            </div>
                         </div>
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.Age)
-                            @Html.TextBoxFor(m => m.Age, new { @class = "form-control", type = "number", disabled = "true" })
-                            @Html.ValidationMessageFor(m => m.Age, null, new { @class = "text-danger" })
+                    </div>
+                    <div class="card border-0">
+                        <div class="card-body card-right">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.LastName)
+                                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", disabled = "true" })
+                                @Html.ValidationMessageFor(m => m.LastName, null, new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.BloodType)
+                                @Html.DropDownListFor(m => m.BloodType, ViewBag.BloodTypes as SelectList, new { @class = "form-control", disabled = "true" })
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="card border-0">
-                    <div class="card-body card-right">
+                <div class="row">
+                    <div class="col-md-12">
                         <div class="form-group">
-                            @Html.LabelFor(m => m.LastName)
-                            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", disabled = "true" })
-                            @Html.ValidationMessageFor(m => m.LastName, null, new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.BloodType)
-                            @Html.DropDownListFor(m => m.BloodType, ViewBag.BloodTypes as SelectList, new { @class = "form-control", disabled = "true" })
+                            @Html.LabelFor(m => m.Location)
+                            @Html.TextBoxFor(m => m.Location, new { @class = "form-control", disabled = "true" })
+                            @Html.ValidationMessageFor(m => m.Location, null, new { @class = "text-danger" })
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.Location)
-                        @Html.TextBoxFor(m => m.Location, new { @class = "form-control", disabled = "true" })
-                        @Html.ValidationMessageFor(m => m.Location, null, new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-            <div class="card-group">
-                <div class="card border-0 username-card">
-                    <div class="card-body card-left">
-                        <div class="form-group username-group">
-                            @Html.LabelFor(m => m.UserName)
-                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.UserName, null, new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Update Info" class="update-btn btn-block" id="signup-btn" />
+                <div class="card-group">
+                    <div class="card border-0 username-card">
+                        <div class="card-body card-left">
+                            <div class="form-group username-group">
+                                @Html.LabelFor(m => m.UserName)
+                                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.UserName, null, new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Update Info" class="update-btn btn-block" id="signup-btn" />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="card border-0 password-card">
-                    <div class="card-body card-right">
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.Password)
-                            @Html.TextBoxFor(m => m.Password, new { @class = "form-control", type = "password" })
-                            @Html.ValidationMessageFor(m => m.Password, null, new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.ConfirmPassword)
-                            @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control", type = "password" })
-                            @Html.ValidationMessageFor(m => m.ConfirmPassword, null, new { @class = "text-danger" })
-                            <span class="text-danger password-mismatch-error" id="password-mismatch-error">Password doesn't match</span>
+                    <div class="card border-0 password-card">
+                        <div class="card-body card-right">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Password)
+                                @Html.TextBoxFor(m => m.Password, new { @class = "form-control", type = "password" })
+                                @Html.ValidationMessageFor(m => m.Password, null, new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ConfirmPassword)
+                                @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control", type = "password" })
+                                @Html.ValidationMessageFor(m => m.ConfirmPassword, null, new { @class = "text-danger" })
+                                <span class="text-danger password-mismatch-error" id="password-mismatch-error">Password doesn't match</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        }
+            }
+        </div>
     </div>
 </div>

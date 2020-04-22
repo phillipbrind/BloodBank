@@ -4,16 +4,17 @@
     ViewBag.Title = "Sign Up";
 }
 
-<div class="container d-flex justify-content-center pt-5">
+@section Scripts {
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}
+
+<div class="container-fluid d-flex justify-content-center pt-5">
     <div class="card login-card">
         <div class="card-title text-center">
             <span class="login-title">sign up</span>
         </div>
         <div class="card-body">
-            @section Scripts {
-                <script src="~/Scripts/jquery.validate.min.js"></script>
-                <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-            }
             @using (Html.BeginForm("CreateUser", "User"))
             {
                 <div class="form-group">
