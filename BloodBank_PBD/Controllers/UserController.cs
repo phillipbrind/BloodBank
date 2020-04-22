@@ -12,6 +12,7 @@ namespace BloodBank_PBD.Controllers
     public class UserController : Controller
     {
         private Blood_Bank_Entities db = new Blood_Bank_Entities();
+        private string[] bloodTypes = { "O-", "O+", "A-", "A+", "B-", "B+", "AB-", "AB+" };
 
         [HttpPost]
         public ActionResult CreateUser(User user)
@@ -94,6 +95,7 @@ namespace BloodBank_PBD.Controllers
         public ActionResult UpdateUserInfo(string username)
         {
             User user = db.Users.Where(m => m.UserName.Equals(username)).FirstOrDefault();
+            ViewBag.BloodTypes = new SelectList(bloodTypes);
 
             return View(user);
         }
@@ -103,6 +105,8 @@ namespace BloodBank_PBD.Controllers
         {
             if (ModelState.IsValid)
             {
+                user.Password = Convert.ToBase64String(System.Security.Cryptography.SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(user.Password)));
+
                 try
                 {
                     db.Entry(user).State = EntityState.Modified;
@@ -125,6 +129,8 @@ namespace BloodBank_PBD.Controllers
                     throw;
                 }
             }
+
+            ViewBag.BloodTypes = new SelectList(bloodTypes);
 
             return View(user);
         }

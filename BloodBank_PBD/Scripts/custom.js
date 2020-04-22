@@ -148,6 +148,7 @@
     // User Profile
     $("#edit-btn").click(function () {
         $("input").removeAttr("disabled");
+        $("select").removeAttr("disabled");
         $(".username-card").show();
         $(".password-card").show();
     });

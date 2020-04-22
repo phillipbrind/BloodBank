@@ -46,10 +46,10 @@ namespace BloodBank_PBD.Models
         [MaxLength(20, ErrorMessage = "Do not enter more than 20 characters")]
         public string UserName { get; set; }
         [Required(ErrorMessage = "Make sure you enter a password.")]
-        [MaxLength(50)]
+        [MaxLength(50, ErrorMessage = "Do not enter more than 50 characters")]
         public string Password { get; set; }
         [Required(ErrorMessage = "Make sure you enter a password.")]
-        [MaxLength(50)]
+        [MaxLength(50, ErrorMessage = "Do not enter more than 50 characters")]
         public string ConfirmPassword { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

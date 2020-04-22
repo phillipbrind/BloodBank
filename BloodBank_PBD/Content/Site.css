@@ -139,7 +139,7 @@ a {
     transition: 0.5s;
     text-transform: capitalize;
     font: 16px avenir-lt-w01_35-light1475496,sans-serif;
-    padding: 20px 0;
+    padding: 15px 0;
 }
 
 .user-txt:focus + label,
