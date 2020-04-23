@@ -26,21 +26,17 @@
             <div class="admin-btn">
                 @Ajax.ActionLink("View all Users", "GetAllUsers", new AjaxOptions
            {
-
                HttpMethod = "GET",
                UpdateTargetId = "user-div",
                InsertionMode = InsertionMode.Replace
-
            })
             </div>
             <div class="admin-btn">
-                @Ajax.ActionLink("View all Tests", "GetAllTests", new AjaxOptions
+                @Ajax.ActionLink("View all Tests", "GetAllTests", "Test", new AjaxOptions
            {
-
                HttpMethod = "GET",
                UpdateTargetId = "user-div",
                InsertionMode = InsertionMode.Replace
-
            })
             </div>
         </div>
@@ -54,7 +50,6 @@
                     <div class="card border-0">
                         <div class="card-body card-left">
                             <div class="form-group">
-                                @Html.HiddenFor(m => m.UserId)
                                 @Html.LabelFor(m => m.FirstName)
                                 @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", disabled = "true" })
                                 @Html.ValidationMessageFor(m => m.FirstName, null, new { @class = "text-danger" })
@@ -112,12 +107,13 @@
                             <div class="form-group">
                                 @Html.LabelFor(m => m.ConfirmPassword)
                                 @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control", type = "password" })
-                                @Html.ValidationMessageFor(m => m.ConfirmPassword, null, new { @class = "text-danger" })
                                 <span class="text-danger password-mismatch-error" id="password-mismatch-error">Password doesn't match</span>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                @Html.HiddenFor(m => m.UserId)
             }
         </div>
     </div>

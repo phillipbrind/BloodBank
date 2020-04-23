@@ -10,6 +10,7 @@ namespace BloodBank_PBD.Controllers
     public class TestController : Controller
     {
         private Blood_Bank_Entities db = new Blood_Bank_Entities();
+        private string[] progress = { "Submitted", "Processed", "Completed" };
 
         public ActionResult CreateTest()
         {
@@ -20,7 +21,6 @@ namespace BloodBank_PBD.Controllers
                 fullname.Add(user.FirstName + " " + user.LastName);
             }
             ViewBag.FullNameList = new SelectList(fullname);
-            string[] progress = { "Submitted", "Processing", "Completed" };
             ViewBag.Progress = new SelectList(progress);
 
             return View();
@@ -29,27 +29,41 @@ namespace BloodBank_PBD.Controllers
         [HttpPost]
         public ActionResult CreateTest(Test test)
         {
-            try
+            if (ModelState.IsValid)
             {
-                db.Tests.Add(test);
-                db.SaveChanges();
-            }
-            catch (DbEntityValidationException e)
-            {
-                foreach (var ex in e.EntityValidationErrors)
+                try
                 {
-                    Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:", ex.Entry.Entity.GetType().Name, ex.Entry.State);
+                    db.Tests.Add(test);
+                    db.SaveChanges();
 
-                    foreach (var se in ex.ValidationErrors)
-                    {
-                        Debug.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
-                            se.PropertyName, se.ErrorMessage);
-                    }
+                    return View("GetAllTests");
                 }
-                throw;
+                catch (DbEntityValidationException e)
+                {
+                    foreach (var ex in e.EntityValidationErrors)
+                    {
+                        Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:", ex.Entry.Entity.GetType().Name, ex.Entry.State);
+
+                        foreach (var se in ex.ValidationErrors)
+                        {
+                            Debug.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                                se.PropertyName, se.ErrorMessage);
+                        }
+                    }
+                    throw;
+                }
             }
 
-            return View();
+            List<User> userlist = db.Users.ToList();
+            List<string> fullname = new List<string>();
+            foreach (User user in userlist)
+            {
+                fullname.Add(user.FirstName + " " + user.LastName);
+            }
+            ViewBag.FullNameList = new SelectList(fullname);
+            ViewBag.Progress = new SelectList(progress);
+
+            return View(test);
         }
 
         public ActionResult UpdateTest()

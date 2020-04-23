@@ -90,6 +90,8 @@ namespace BloodBank_PBD.Controllers
                 }
             }
 
+            ViewBag.BloodTypes = new SelectList(bloodTypes);
+
             return View(user);
         }
 

@@ -1,91 +1,85 @@
 ﻿@model IEnumerable<BloodBank_PBD.Models.Test>
 
-@{
-    ViewBag.Title = "Tests";
-    Layout = "~/Views/Shared/_MenuLayout.cshtml";
-}
+<h2>donor tests</h2>
 
-<div class="container">
-    <div class="row justify-content-center admin-menu">donor tests</div>
-
-    @using (Html.BeginForm(null, null, FormMethod.Get, new { @class = "form-inline" }))
-    {
-        @Html.Label("search-lastname-label", "Search by:", new { @class = "mt-3 mb-2 mr-md-2" })
-        @Html.TextBox("search-lastname", null, new { @class = "form-control mt-3 mb-2 mr-md-5", placeholder = "Last Name" })
-        @Html.Label("search-testid-label", "Search by:", new { @class = "mt-3 mb-2 mr-md-2 ml-md-5" })
-        @Html.TextBox("search-testid", null, new { @class = "form-control mt-3 mb-2 mr-md-2", placeholder = "Test ID" })
-    }
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.User.FirstName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.User.LastName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.User.Age)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.TestId)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.BP)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Height)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Weight)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Date)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Progress)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.User.FirstName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.User.LastName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.User.Age)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TestId)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.BP)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Height)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Weight)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Date)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Progress)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.TestId }) |
-                        @Html.ActionLink("Delete", "DeleteUser", new { id = item.TestId })
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+<div class="btn btn-outline-danger">
+    @Ajax.ActionLink("Add or Update a Test", "CreateTest", new AjaxOptions
+{
+   HttpMethod = "GET",
+   UpdateTargetId = "user-div",
+   InsertionMode = InsertionMode.Replace
+})
 </div>
-
+@using (Html.BeginForm(null, null, FormMethod.Get, new { @class = "form-inline" }))
+{
+    @Html.Label("search-lastname-label", "Search by:", new { @class = "mt-3 mb-2 mr-md-2" })
+    @Html.TextBox("search-lastname", null, new { @class = "form-control mt-3 mb-2 mr-md-5", placeholder = "Last Name" })
+    @Html.Label("search-testid-label", "Search by:", new { @class = "mt-3 mb-2 mr-md-2 ml-md-5" })
+    @Html.TextBox("search-testid", null, new { @class = "form-control mt-3 mb-2 mr-md-2", placeholder = "Test ID" })
+}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DonorFullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TestId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Height)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Progress)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DonorFullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TestId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Height)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Weight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Progress)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.TestId }) |
+                    @Html.ActionLink("Delete", "DeleteUser", new { id = item.TestId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

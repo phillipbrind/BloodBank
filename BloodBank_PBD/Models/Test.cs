@@ -16,17 +16,20 @@ namespace BloodBank_PBD.Models
         [Key]
         [Display(Name = "Test ID")]
         public int TestId { get; set; }
+        [Display(Name = "Donor's Name")]
         [MaxLength(50)]
         public string DonorFullName { get; set; }
-        [Required]
+        [Display(Name = "Weight (kg)")]
+        [Required(ErrorMessage = "Weight cannot be blank")]
         public int Weight { get; set; }
-        [Required]
+        [Display(Name = "Height (cm)")]
+        [Required(ErrorMessage = "Height cannot be blank")]
         public int Height { get; set; }
-        [Required]
+        [Required(ErrorMessage = "BP cannot be blank")]
         public int BP { get; set; }
-        [MaxLength(10)]
+        [MaxLength(9)]
         public string Progress { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Make sure you enter a date.")]
         public System.DateTime Date { get; set; }
         public int UserId { get; set; }
 

@@ -48,7 +48,6 @@
                 </div>
                 <div class="form-group">
                     @Html.TextBoxFor(m => m.ConfirmPassword, null, new { @class = "form-control new-user-txt", placeholder = "Confirm Password", type = "password" })
-                    @Html.ValidationMessageFor(m => m.ConfirmPassword, null, new { @class = "text-danger" })
                     <span class="text-danger password-mismatch-error" id="password-mismatch-error">Password doesn't match</span>
                 </div>
                 <div class="login-btn mt-5"><input type="submit" value="sign up" id="signup-btn"></div>
