@@ -17,11 +17,19 @@
                 <div class="card user-avatar">
                     <div class="card-body">
                         <div><i class="fas fa-user-circle"></i></div>
-                        <div class="user">@Html.DisplayFor(m => m.UserName)</div>
+                        <div class="user">@Session["Username"]</div>
                         <div class="role">admin</div>
                         <div><input type="button" value="Edit" class="btn btn-outline-danger btn-block" id="edit-btn" /></div>
                     </div>
                 </div>
+            </div>
+            <div class="admin-btn">
+                @Ajax.ActionLink("View My Tests", "GetTest", "Test", new { username = Session["Username"] }, new AjaxOptions
+           {
+               HttpMethod = "GET",
+               UpdateTargetId = "user-div",
+               InsertionMode = InsertionMode.Replace
+           })
             </div>
             <div class="admin-btn">
                 @Ajax.ActionLink("View all Users", "GetAllUsers", new AjaxOptions

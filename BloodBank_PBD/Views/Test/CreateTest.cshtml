@@ -8,7 +8,12 @@
 
 <h2>add or update a test</h2>
 
-@using (Html.BeginForm())
+@using (Ajax.BeginForm(new AjaxOptions
+{
+    HttpMethod = "POST",
+    UpdateTargetId = "user-div",
+    InsertionMode = InsertionMode.Replace
+}))
 {
     <div class="form-group">
         <div class="row">
