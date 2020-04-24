@@ -5,18 +5,19 @@
 }
 
 @section Scripts {
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 }
 
-<div class="container-fluid">
+<div class="container-fluid" id="contact-container">
     <div>
         <img src="~/images/contact.jpg" alt="about_us.jpg" class="banner" />
     </div>
     <div class="card-group contact-card-left">
         <div class="card border-0">
             <div class="card-body">
-                @using (Html.BeginForm("AddContactMessage", "Home"))
+                @using (Ajax.BeginForm("AddContactMessage", new AjaxOptions { UpdateTargetId = "contact-container" }))
                 {
                     <div class="form-group">
                         <span class="contact-message">Message Us</span>
@@ -40,6 +41,7 @@
                         <input type="submit" value="Submit" />
                     </div>
                 }
+                <div class="text-success d-flex justify-content-center mt-3">@ViewBag.StatusMessage</div>
             </div>
         </div>
         <div class="card border-0">

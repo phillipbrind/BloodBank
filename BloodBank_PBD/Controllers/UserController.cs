@@ -14,7 +14,6 @@ namespace BloodBank_PBD.Controllers
         private Blood_Bank_Entities db = new Blood_Bank_Entities();
         private string[] bloodTypes = { "O-", "O+", "A-", "A+", "B-", "B+", "AB-", "AB+" };
 
-        [HttpPost]
         public ActionResult CreateUser(User user)
         {
             if (ModelState.IsValid)

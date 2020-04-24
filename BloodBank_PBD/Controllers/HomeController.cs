@@ -91,7 +91,6 @@ namespace BloodBank_PBD.Controllers
             return View();
         }
 
-        [HttpPost]
         public ActionResult AddContactMessage(Message message)
         {
             Blood_Bank_InfoEntities contactDB = new Blood_Bank_InfoEntities();
@@ -102,8 +101,9 @@ namespace BloodBank_PBD.Controllers
                 {
                     contactDB.Messages.Add(message);
                     contactDB.SaveChanges();
+                    string statusMessage = "Message sent";
 
-                    return View("Contact");
+                    return RedirectToAction("ShowStatusMessage", new { statusMessage = statusMessage });
                 }
                 catch (DbEntityValidationException e)
                 {
@@ -123,5 +123,13 @@ namespace BloodBank_PBD.Controllers
 
             return View("Contact", message);
         }
+
+        public ActionResult ShowStatusMessage(string statusMessage)
+        {
+            ViewBag.StatusMessage = statusMessage;
+
+            return View("Contact");
+        }
+
     }
 }
