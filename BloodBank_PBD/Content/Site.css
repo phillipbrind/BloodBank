@@ -309,17 +309,46 @@ a {
 }
 
 .privacy-policy-card {
-    padding: 100px 120px;
-}
-
-.privacy-policy-title {
-    font: 900 3.8em Arial, Helvetica, sans-serif;
+    padding: 50px 120px;
+    font: 800 55px poppins-semibold, poppins, sans-serif;
     text-transform: uppercase;
 }
 
+.dot {
+    color: #F1562A;
+}
+
 .privacy-policy-content {
-    padding: 100px 130px 0 0;
-    letter-spacing: 0.02em;
+    padding: 55px 130px 0 0;
+    line-height: 1.7em;
+    font: 14px avenir-lt-w01_35-light1475496, sans-serif;
+}
+
+    .privacy-policy-content p {
+        line-height: 1.7em;
+        margin-bottom: 30px;
+    }
+
+.hospital-group {
+    margin: 0 100px;
+}
+
+.adhb-img {
+    height: 113px;
+}
+
+.nmdhb-img, .southern-cross-img {
+    width: 140px;
+    margin-top: 40px;
+}
+
+.bobdhb-img {
+    width: 150px;
+    margin-top: 30px;
+}
+
+.starship-img {
+    width: 130px;
 }
 
 /* Services Page */
