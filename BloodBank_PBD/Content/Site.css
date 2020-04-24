@@ -212,6 +212,12 @@ a {
     line-height: 250%;
 }
 
+.search-txt {
+    width: 200px;
+    height: 35px;
+    border-radius: 5px;
+}
+
 /* View User Information - User */
 .user-avatar {
     width: 250px;
@@ -309,7 +315,7 @@ a {
 }
 
 .privacy-policy-card {
-    padding: 50px 120px;
+    padding: 50px 115px;
     font: 800 55px poppins-semibold, poppins, sans-serif;
     text-transform: uppercase;
 }
@@ -352,17 +358,9 @@ a {
 }
 
 /* Services Page */
-.procedure-title {
-    font: 900 3.3em Arial, Helvetica, sans-serif;
-    text-transform: uppercase;
-}
-
 .procedure li {
-    padding: 15px 0;
-}
-
-.benefits-card {
-    padding: 50px 120px;
+    line-height: 1.7em;
+    margin-bottom: 30px;
 }
 
 /* Contact Page */

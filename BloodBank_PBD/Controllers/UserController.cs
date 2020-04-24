@@ -140,11 +140,8 @@ namespace BloodBank_PBD.Controllers
         public ActionResult DeleteUser(int id)
         {
             User user = db.Users.Find(id);
-            if (user != null)
-            {
-                db.Users.Remove(user);
-                db.SaveChanges();
-            }
+            db.Users.Remove(user);
+            db.SaveChanges();
 
             return RedirectToAction("GetAllUsers");
         }

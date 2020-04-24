@@ -8,12 +8,7 @@
 
 <h2>update user information</h2>
 
-@using (Ajax.BeginForm(new AjaxOptions
-{
-    HttpMethod = "POST",
-    UpdateTargetId = "user-div",
-    InsertionMode = InsertionMode.Replace
-}))
+@using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "user-div" }))
 {
     <div class="form-group">
         <div class="row">

@@ -1,16 +1,11 @@
 ﻿@model IEnumerable<BloodBank_PBD.Models.User>
 
-@section Scripts {
-    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-}
-
 <h2>list of donors</h2>
 
-@using (Html.BeginForm(null, null, FormMethod.Get, new { @class = "form-inline" }))
-{
-    @Html.Label("search-label", "Search by:", new { @class = "mt-3 mb-2 mr-md-2" })
-    @Html.TextBox("search-lastname", null, new { @class = "form-control mt-3 mb-2 mr-md-2", placeholder = "Last Name" })
-}
+<div class="mb-2">
+    @Html.Label("Search By: ")
+    @Html.TextBox("search-lastname", null, new { @class = "search-txt", placeholder = "Last Name" })
+</div>
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -52,22 +47,8 @@
                     @Html.DisplayFor(modelItem => item.Location)
                 </td>
                 <td>
-                    @Ajax.ActionLink("Edit", "UpdateUser", new { id = item.UserId }, new AjaxOptions
-           {
-
-               HttpMethod = "GET",
-               UpdateTargetId = "user-div",
-               InsertionMode = InsertionMode.Replace
-
-           }) |
-                    @Ajax.ActionLink("Delete", "DeleteUser", new { id = item.UserId }, new AjaxOptions
-           {
-
-               HttpMethod = "POST",
-               UpdateTargetId = "user-div",
-               InsertionMode = InsertionMode.Replace
-
-           })
+                    @Ajax.ActionLink("Edit", "UpdateUser", new { id = item.UserId }, new AjaxOptions { HttpMethod = "GET", UpdateTargetId = "user-div" }) |
+                    @Ajax.ActionLink("Delete", "DeleteUser", new { id = item.UserId }, new AjaxOptions { UpdateTargetId = "user-div" })
                 </td>
             </tr>
         }

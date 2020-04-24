@@ -1,19 +1,13 @@
 ﻿@model BloodBank_PBD.Models.Test
 
 @section Scripts {
-    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 }
 
 <h2>add or update a test</h2>
 
-@using (Ajax.BeginForm(new AjaxOptions
-{
-    HttpMethod = "POST",
-    UpdateTargetId = "user-div",
-    InsertionMode = InsertionMode.Replace
-}))
+@using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "user-div" }))
 {
     <div class="form-group">
         <div class="row">
@@ -80,9 +74,5 @@
         </div>
     </div>
 
-    <div class="row justify-content-center">
-        <div class="col-md-2">
-            <input type="submit" value="Add" class="btn btn-danger btn-block" />
-        </div>
-    </div>
+    <div class="login-btn d-flex justify-content-center mt-5"><input type="submit" value="add" /></div>
 }
