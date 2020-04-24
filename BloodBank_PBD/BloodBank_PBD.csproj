@@ -159,7 +159,25 @@
       <DependentUpon>BloodBankDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\UserLoginModel.cs" />
+    <Compile Include="ViewModel\LoginViewModel\UserLoginModel.cs" />
+    <Compile Include="ViewModel\MessageViewModel\BloodBankDB2.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BloodBankDB2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\MessageViewModel\BloodBankDB2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BloodBankDB2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\MessageViewModel\BloodBankDB2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BloodBankDB2.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\MessageViewModel\Message.cs">
+      <DependentUpon>BloodBankDB2.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Blood_Bank_Info.mdf" />
@@ -338,6 +356,16 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="ViewModel\MessageViewModel\BloodBankDB2.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BloodBankDB2.edmx</DependentUpon>
+      <LastGenOutput>BloodBankDB2.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ViewModel\MessageViewModel\BloodBankDB2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BloodBankDB2.edmx</DependentUpon>
+      <LastGenOutput>BloodBankDB2.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -388,6 +416,13 @@
     <Content Include="webfonts\fa-brands-400.ttf" />
     <Content Include="webfonts\fa-brands-400.eot" />
     <Content Include="Views\Test\GetTest.cshtml" />
+    <EntityDeploy Include="ViewModel\MessageViewModel\BloodBankDB2.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BloodBankDB2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="ViewModel\MessageViewModel\BloodBankDB2.edmx.diagram">
+      <DependentUpon>BloodBankDB2.edmx</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

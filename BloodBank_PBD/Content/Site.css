@@ -322,7 +322,7 @@ a {
     letter-spacing: 0.02em;
 }
 
-/* Services */
+/* Services Page */
 .procedure-title {
     font: 900 3.3em Arial, Helvetica, sans-serif;
     text-transform: uppercase;
@@ -336,13 +336,35 @@ a {
     padding: 50px 120px;
 }
 
-/* Contact */
-.contact-media-card {
-    height: 100px;
-    width: 106px;
-    align-self: center;
+/* Contact Page */
+.contact-card-left {
+    font: 14px avenir-lt-w01_35-light1475496, sans-serif;
 }
 
-.contact-media-image {
-    padding-top: 25px;
+.contact-card-right {
+    margin-top: 50px;
+}
+
+.contact-message {
+    font: 500 30px poppins-semibold, poppins, sans-serif;
+}
+
+.message-text {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.contact-info-title {
+    font: 16px avenir-lt-w01_35-light1475496, sans-serif;
+    text-transform: uppercase;
+}
+
+.contact-media-card {
+    height: 100px;
+    padding-top: 20px;
+}
+
+.fab.fa-facebook-f, .fab.fa-twitter, .fab.fa-instagram, .fab.fa-youtube {
+    font-size: 40px;
 }

@@ -1,6 +1,9 @@
 ﻿using BloodBank_PBD.Models;
 using BloodBank_PBD.ViewModel;
+using BloodBank_PBD.ViewModel.MessageViewModel;
 using System;
+using System.Data.Entity.Validation;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Web.Mvc;
@@ -86,6 +89,39 @@ namespace BloodBank_PBD.Controllers
         public ActionResult Contact()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddContactMessage(Message message)
+        {
+            Blood_Bank_InfoEntities contactDB = new Blood_Bank_InfoEntities();
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    contactDB.Messages.Add(message);
+                    contactDB.SaveChanges();
+
+                    return View("Contact");
+                }
+                catch (DbEntityValidationException e)
+                {
+                    foreach (var ex in e.EntityValidationErrors)
+                    {
+                        Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:", ex.Entry.Entity.GetType().Name, ex.Entry.State);
+
+                        foreach (var se in ex.ValidationErrors)
+                        {
+                            Debug.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                                se.PropertyName, se.ErrorMessage);
+                        }
+                    }
+                    throw;
+                }
+            }
+
+            return View("Contact", message);
         }
     }
 }
