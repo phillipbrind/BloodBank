@@ -332,7 +332,7 @@ a {
 
     .privacy-policy-content p {
         line-height: 1.7em;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
     }
 
 .gallery-pic {
@@ -363,10 +363,14 @@ a {
 }
 
 /* Services Page */
-.procedure li {
-    line-height: 1.7em;
-    margin-bottom: 30px;
+.procedure {
+    padding-left: 0;
 }
+
+    .procedure li {
+        line-height: 1.7em;
+        margin-bottom: 15px;
+    }
 
 /* Contact Page */
 .contact-card-left {
