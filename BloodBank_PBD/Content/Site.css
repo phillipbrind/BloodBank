@@ -335,6 +335,11 @@ a {
         margin-bottom: 30px;
     }
 
+.gallery-pic {
+    height: 255px;
+    width: 255px;
+}
+
 .hospital-group {
     margin: 0 100px;
 }

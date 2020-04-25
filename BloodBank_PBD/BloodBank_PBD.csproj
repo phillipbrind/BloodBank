@@ -212,6 +212,11 @@
     <Content Include="images\carousel\blood_donation_02.jpg" />
     <Content Include="images\carousel\blood_donation_03.jpg" />
     <Content Include="images\contact.jpg" />
+    <Content Include="images\gallery\01.jpg" />
+    <Content Include="images\gallery\02.jpg" />
+    <Content Include="images\gallery\03.jpg" />
+    <Content Include="images\gallery\04.jpg" />
+    <Content Include="images\gallery\05.jpg" />
     <Content Include="images\give_blood.jpeg" />
     <Content Include="images\hopitals\01.png" />
     <Content Include="images\hopitals\02.png" />
