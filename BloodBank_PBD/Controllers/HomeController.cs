@@ -12,6 +12,7 @@ namespace BloodBank_PBD.Controllers
 {
     public class HomeController : Controller
     {
+        private const string ADMIN = "admin";
         private Blood_Bank_Entities db = new Blood_Bank_Entities();
 
         public ActionResult Index()
@@ -44,6 +45,7 @@ namespace BloodBank_PBD.Controllers
             }
 
             Session["Username"] = ulm.UserName;
+            Session["Role"] = ulm.UserName.Equals(ADMIN) ? "Admin" : "User";
 
             return View("Index");
         }

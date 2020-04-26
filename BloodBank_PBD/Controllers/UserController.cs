@@ -1,5 +1,6 @@
 ﻿using BloodBank_PBD.Models;
 using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
@@ -11,6 +12,7 @@ namespace BloodBank_PBD.Controllers
 {
     public class UserController : Controller
     {
+        private const string ADMIN = "admin";
         private Blood_Bank_Entities db = new Blood_Bank_Entities();
         private string[] bloodTypes = { "O-", "O+", "A-", "A+", "B-", "B+", "AB-", "AB+" };
 
@@ -31,6 +33,11 @@ namespace BloodBank_PBD.Controllers
                 {
                     db.Users.Add(user);
                     db.SaveChanges();
+
+                    Session["Username"] = user.UserName;
+                    Session["Role"] = user.UserName.Equals(ADMIN) ? "Admin" : "User";
+
+                    return RedirectToAction("Index", "Home");
                 }
                 catch (DbEntityValidationException e)
                 {
@@ -46,8 +53,6 @@ namespace BloodBank_PBD.Controllers
                     }
                     throw;
                 }
-
-                return RedirectToAction("Index", "Home");
             }
 
             return RedirectToAction("SignUp", "Home", user);
@@ -153,7 +158,12 @@ namespace BloodBank_PBD.Controllers
 
         public ActionResult GetAllUsers()
         {
-            return View(db.Users.ToList());
+            List<User> users = db.Users.ToList();
+
+            if (users.Count() == 0)
+                ViewBag.UserResult = "No user records found";
+
+            return View(users.ToList());
         }
     }
 }

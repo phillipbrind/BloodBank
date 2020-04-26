@@ -1,5 +1,9 @@
 ﻿@model IEnumerable<BloodBank_PBD.Models.Test>
 
+@{
+    Layout = null;
+}
+
 <h2>my test results</h2>
 
 <table class="table table-bordered">
@@ -63,3 +67,5 @@
         }
     </tbody>
 </table>
+
+<p>@ViewBag.TestResult</p>

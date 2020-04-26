@@ -14,6 +14,7 @@ a {
 
 .container-fluid {
     margin: 77px 0;
+    padding: 0;
 }
 
 /* Shared Layout */
@@ -53,8 +54,13 @@ a {
 }
 
     .dropdown-item:hover {
+        background-color: #FFFFFF;
         color: #F1562A;
         transition: color 0.4s ease 0s;
+    }
+
+    .dropdown-item:active {
+        background-color: #FFFFFF;
     }
 
 .nav-home,
@@ -97,6 +103,28 @@ a {
 .nav-link:hover {
     background-color: #000000;
     transition: background-color 0.4s ease 0s;
+}
+
+.footer-card-content {
+    padding: 100px 0;
+    text-align: center;
+    background-color: #F1562A;
+}
+
+.footer-title {
+    font: 900 70px poppins-semibold, poppins, sans-serif;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.footer-text {
+    font: 900 30px poppins-semibold, poppins, sans-serif;
+    color: #FFFFFF;
+}
+
+.card-footer {
+    text-align: center;
+    font: 12px avenir-lt-w01_85-heavy1475544, sans-serif;
 }
 
 /* Login Page */
@@ -209,8 +237,19 @@ a {
     margin: 10px 0 0 15px;
     border: 1px solid rgba(0, 0, 0, 0.125);
     text-align: center;
-    line-height: 250%;
+    padding-top: 10px;
+    text-transform: capitalize;
+    font: 14px avenir-lt-w01_35-light1475496,sans-serif;
 }
+
+    .admin-btn a {
+        color: #A1391C;
+    }
+
+        .admin-btn a:hover {
+            color: ActiveBorder;
+            transition: color 0.4s ease 0s;
+        }
 
 .search-txt {
     width: 200px;
@@ -223,7 +262,7 @@ a {
     width: 250px;
     height: 258px;
     text-align: center;
-    padding: 35px 25px;
+    padding: 35px 10px;
     margin: 50px 15px 0px 0px;
 }
 
@@ -295,6 +334,29 @@ a {
     height: 642px;
 }
 
+.carousel-caption {
+    width: 860px;
+    height: 240px;
+    font: 700 120px poppins-semibold, poppins, sans-serif;
+    color: #000000;
+    text-transform: uppercase;
+    text-align: left;
+    position: absolute;
+    top: 90px;
+    left: 105px;
+    line-height: 1em;
+}
+
+.banner-separator {
+    width: 141px;
+    height: 30px;
+    background-color: #F1562A;
+}
+
+.banner-half-message {
+    color: #F1562A;
+}
+
 .statistics {
     padding: 130px 0;
 }
@@ -312,6 +374,19 @@ a {
 .banner {
     width: 100%;
     height: 642px;
+}
+
+.banner-text {
+    width: 860px;
+    height: 240px;
+    font: 700 120px poppins-semibold, poppins, sans-serif;
+    color: #000000;
+    text-transform: uppercase;
+    text-align: left;
+    position: absolute;
+    top: 110px;
+    left: 105px;
+    line-height: 1em;
 }
 
 .privacy-policy-card {

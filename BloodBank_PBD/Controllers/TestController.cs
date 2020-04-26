@@ -119,12 +119,22 @@ namespace BloodBank_PBD.Controllers
 
         public ActionResult GetTest(string username)
         {
-            return View(db.Tests.Where(m => m.User.UserName.Equals(username)).ToList());
+            List<Test> tests = db.Tests.Where(m => m.User.UserName.Equals(username)).ToList();
+
+            if (tests.Count() == 0)
+                ViewBag.TestResult = "No test records found";
+
+            return View(tests.ToList());
         }
 
         public ActionResult GetAllTests()
         {
-            return View(db.Tests.ToList());
+            List<Test> tests = db.Tests.ToList();
+
+            if (tests.Count() == 0)
+                ViewBag.TestResult = "No test records found";
+
+            return View(tests.ToList());
         }
     }
 }

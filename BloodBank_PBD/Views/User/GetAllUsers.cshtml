@@ -1,5 +1,9 @@
 ﻿@model IEnumerable<BloodBank_PBD.Models.User>
 
+@{
+    Layout = null;
+}
+
 <h2>list of donors</h2>
 
 <div class="mb-2">
@@ -54,3 +58,4 @@
         }
     </tbody>
 </table>
+<p>@ViewBag.UserResult</p>

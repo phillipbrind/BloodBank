@@ -53,10 +53,19 @@
         </ul>
     </nav>
     @RenderBody()
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-body footer-card-content">
+                <p class="footer-title">join the movement!</p>
+                <p class="footer-text">Be a Blood Donor now</p>
+            </div>
+            <div class="card-footer">&copy; 2020 by Last Hope</div>
+        </div>
+    </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/custom")
     @RenderSection("scripts", false)
+    @Scripts.Render("~/bundles/custom")
 </body>
 </html>
