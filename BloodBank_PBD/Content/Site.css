@@ -390,7 +390,7 @@ a {
 }
 
 .privacy-policy-card {
-    padding: 50px 115px;
+    padding: 50px 90px;
     font: 800 55px poppins-semibold, poppins, sans-serif;
     text-transform: uppercase;
 }
@@ -446,6 +446,21 @@ a {
         line-height: 1.7em;
         margin-bottom: 15px;
     }
+
+.blood-camps {
+    margin: 0 75px;
+    border: none;
+}
+
+.camp-name {
+    font: bold 30px poppins-semibold, poppins, sans-serif;
+    color: #F1562A;
+    text-transform: capitalize;
+}
+
+.camp-date {
+    font: 14px avenir-lt-w01_35-light1475496, sans-serif;
+}
 
 /* Contact Page */
 .contact-card-left {
