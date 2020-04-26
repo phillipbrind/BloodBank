@@ -43,7 +43,7 @@
 </div>
 
 <div class="statistics">
-    <div class="card-group">
+    <div class="card-group stat-group">
         <div class="card border-0">
             <div class="card-body text-left">
                 <span class="stat-number">10K</span>
@@ -66,6 +66,59 @@
             <div class="card-body text-left">
                 <span class="stat-number">40K</span>
                 <span class="stat-label">Lives for Us to Protect</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="top-index d-flex">
+    <div class="card about-card">
+        <div class="card-body index-card-body">
+            <p class="card-body-title">About Last<br />Hope</p>
+            <p class="card-body-content">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content.</p>
+            <p>@Html.ActionLink("Learn More", "About", null, new { @class = "btn btn-outline-light" })</p>
+        </div>
+    </div>
+    <div class="card top-img-card">
+        <div class="card-img">
+            <img src="~/images/give_blood.jpeg" alt="give-blood" class="top-img" />
+        </div>
+    </div>
+    <div class="card blood-camp-card">
+        <div class="card-body index-card-body">
+            <p class="card-body-title">Upcoming Blood Campaigns</p>
+            <p class="card-body-content">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content.</p>
+            <p>@Html.ActionLink("Learn More", "Services", "Home", null, null, "camps-bookmark", null, new { @class = "btn btn-outline-light" })</p>
+        </div>
+    </div>
+</div>
+<div class="mid-index d-flex">
+    <div class="card mid-img-card">
+        <div class="card-img">
+            <img src="~/images/blood_donation_01.jpg" alt="blood_donation" class="mid-img" />
+        </div>
+    </div>
+    <div class="bottom-right-section">
+        <div class="card services-card">
+            <div class="card-body services-card-body">
+                <p class="services-card-title">How You Can Help</p>
+                <p class="card-body-content">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content.</p>
+                <p>@Html.ActionLink("Act Now", "Services", null, new { @class = "btn btn-outline-light" })</p>
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="card bottom-card-partners">
+                <div class="body partners-card-body">
+                    <p class="card-body-title">Get to Know Our Partners</p>
+                    <p class="card-body-content">I'm a paragraph. Click here to add your own text and edit me. Just click “Edit Text”.</p>
+                    <p>@Html.ActionLink("Our Partners", "About", "Home", null, null, "hospital-bookmark", null, new { @class = "btn btn-outline-light" })</p>
+                </div>
+            </div>
+            <div class="card bottom-img-card">
+                <div class="body">
+                    <div class="card-img">
+                        <img src="~/images/blood_donation_02.jpg" alt="blood_donation" class="bottom-img" />
+                    </div>
+                </div>
             </div>
         </div>
     </div>

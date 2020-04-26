@@ -208,6 +208,8 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="images\about_us.jpg" />
+    <Content Include="images\blood_donation_01.jpg" />
+    <Content Include="images\blood_donation_02.jpg" />
     <Content Include="images\carousel\blood_donation_01.jpg" />
     <Content Include="images\carousel\blood_donation_02.jpg" />
     <Content Include="images\carousel\blood_donation_03.jpg" />

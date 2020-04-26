@@ -361,13 +361,111 @@ a {
     padding: 130px 0;
 }
 
+.stat-group {
+    margin: 0 30px;
+}
+
 .stat-number {
-    font: 900 7.7em Arial, Helvetica, sans-serif;
+    font: 900 120px poppins-semibold, poppins, sans-serif;
     color: #F1562A;
 }
 
 .stat-label {
-    font: 600 2.3em Arial, Helvetica, sans-serif;
+    font: bold 30px poppins-semibold, poppins, sans-serif;
+}
+
+.about-card {
+    width: 508px;
+    border-radius: 0;
+    background-color: #000000;
+    border: none;
+}
+
+.index-card-body {
+    padding: 50px 95px 50px 60px;
+}
+
+.card-body-title {
+    font: bold 30px poppins-semibold, poppins, sans-serif;
+    color: #FFFFFF;
+}
+
+.card-body-content {
+    font: 14px avenir-lt-w01_35-light1475496, sans-serif;
+    color: #FFFFFF;
+    letter-spacing: 0.02em;
+    line-height: 1.7em;
+}
+
+.top-img-card {
+    width: 290px;
+    border-radius: 0;
+}
+
+.top-img {
+    width: 289px;
+    height: 384px;
+}
+
+.blood-camp-card {
+    background-color: #7EB7E4;
+    width: 467px;
+    border-radius: 0;
+    border: none;
+}
+
+.mid-img-card {
+    width: 507px;
+    border-radius: 0;
+    border: none;
+}
+
+.mid-img {
+    width: 507px;
+    height: 768px;
+}
+
+.bottom-right-section {
+    display: block;
+}
+
+.services-card {
+    width: 757px;
+    border-radius: 0;
+    background-color: #F1562A;
+    border: none;
+}
+
+.services-card-body {
+    padding: 50px 230px 50px 70px;
+}
+
+.services-card-title {
+    font: 800 85px poppins-semibold, poppins, sans-serif;
+    color: #FFFFFF;
+    text-transform: capitalize;
+}
+
+.bottom-card-partners {
+    border-radius: 0;
+    background-color: #000000;
+    border: none;
+    width: 289px;
+}
+
+.partners-card-body {
+    padding: 56px 55px 56px 30px;
+}
+
+.bottom-img-card {
+    width: 468px;
+    border-radius: 0;
+    border: none;
+}
+
+.bottom-img {
+    width: 468px;
+    height: 339px;
 }
 
 /* About Page */
