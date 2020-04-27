@@ -10,7 +10,7 @@ namespace BloodBank_PBD.Controllers
 {
     public class TestController : Controller
     {
-        private Blood_Bank_Entities db = new Blood_Bank_Entities();
+        private Blood_Bank_InfoEntities db = new Blood_Bank_InfoEntities();
         private string[] progress = { "Submitted", "Processed", "Completed" };
 
         public ActionResult CreateTest()
@@ -34,6 +34,8 @@ namespace BloodBank_PBD.Controllers
 
             if (ModelState.IsValid)
             {
+                test.BP = test.Systolic + "/" + test.Diastolic;
+
                 foreach (var user in userlist)
                 {
                     if (test.DonorFullName.StartsWith(user.FirstName) && test.DonorFullName.EndsWith(user.LastName))

@@ -1,6 +1,5 @@
 ﻿using BloodBank_PBD.Models;
 using BloodBank_PBD.ViewModel;
-using BloodBank_PBD.ViewModel.MessageViewModel;
 using System;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
@@ -13,7 +12,7 @@ namespace BloodBank_PBD.Controllers
     public class HomeController : Controller
     {
         private const string ADMIN = "admin";
-        private Blood_Bank_Entities db = new Blood_Bank_Entities();
+        private Blood_Bank_InfoEntities db = new Blood_Bank_InfoEntities();
 
         public ActionResult Index()
         {

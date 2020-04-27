@@ -137,47 +137,32 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\BloodBankDB.Context.cs">
+    <Compile Include="Models\BloodBank_Info.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BloodBankDB.Context.tt</DependentUpon>
+      <DependentUpon>BloodBank_Info.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BloodBankDB.cs">
+    <Compile Include="Models\BloodBank_Info.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BloodBankDB.tt</DependentUpon>
+      <DependentUpon>BloodBank_Info.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BloodBankDB.Designer.cs">
+    <Compile Include="Models\BloodBank_Info.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BloodBankDB.edmx</DependentUpon>
+      <DependentUpon>BloodBank_Info.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Message.cs">
+      <DependentUpon>BloodBank_Info.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Test.cs">
-      <DependentUpon>BloodBankDB.tt</DependentUpon>
+      <DependentUpon>BloodBank_Info.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs">
-      <DependentUpon>BloodBankDB.tt</DependentUpon>
+      <DependentUpon>BloodBank_Info.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\LoginViewModel\UserLoginModel.cs" />
-    <Compile Include="ViewModel\MessageViewModel\BloodBankDB2.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BloodBankDB2.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ViewModel\MessageViewModel\BloodBankDB2.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BloodBankDB2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ViewModel\MessageViewModel\BloodBankDB2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BloodBankDB2.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="ViewModel\MessageViewModel\Message.cs">
-      <DependentUpon>BloodBankDB2.tt</DependentUpon>
-    </Compile>
+    <Compile Include="ViewModel\UserLoginModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Blood_Bank_Info.mdf" />
@@ -227,15 +212,15 @@
     <Content Include="images\hopitals\05.png" />
     <Content Include="images\logo.png" />
     <Content Include="images\services.jpg" />
-    <Content Include="Models\BloodBankDB.Context.tt">
+    <Content Include="Models\BloodBank_Info.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BloodBankDB.Context.cs</LastGenOutput>
-      <DependentUpon>BloodBankDB.edmx</DependentUpon>
+      <DependentUpon>BloodBank_Info.edmx</DependentUpon>
+      <LastGenOutput>BloodBank_Info.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\BloodBankDB.tt">
+    <Content Include="Models\BloodBank_Info.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BloodBankDB.edmx</DependentUpon>
-      <LastGenOutput>BloodBankDB.cs</LastGenOutput>
+      <DependentUpon>BloodBank_Info.edmx</DependentUpon>
+      <LastGenOutput>BloodBank_Info.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -275,12 +260,12 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
-    <EntityDeploy Include="Models\BloodBankDB.edmx">
+    <EntityDeploy Include="Models\BloodBank_Info.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BloodBankDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>BloodBank_Info.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\BloodBankDB.edmx.diagram">
-      <DependentUpon>BloodBankDB.edmx</DependentUpon>
+    <Content Include="Models\BloodBank_Info.edmx.diagram">
+      <DependentUpon>BloodBank_Info.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.5.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.5.0.js" />
@@ -368,16 +353,6 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
-    <Content Include="ViewModel\MessageViewModel\BloodBankDB2.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BloodBankDB2.edmx</DependentUpon>
-      <LastGenOutput>BloodBankDB2.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="ViewModel\MessageViewModel\BloodBankDB2.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BloodBankDB2.edmx</DependentUpon>
-      <LastGenOutput>BloodBankDB2.cs</LastGenOutput>
-    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -426,13 +401,6 @@
     <Content Include="webfonts\fa-brands-400.ttf" />
     <Content Include="webfonts\fa-brands-400.eot" />
     <Content Include="Views\Test\GetTest.cshtml" />
-    <EntityDeploy Include="ViewModel\MessageViewModel\BloodBankDB2.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BloodBankDB2.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="ViewModel\MessageViewModel\BloodBankDB2.edmx.diagram">
-      <DependentUpon>BloodBankDB2.edmx</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

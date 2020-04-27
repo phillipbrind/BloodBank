@@ -13,7 +13,7 @@ namespace BloodBank_PBD.Controllers
     public class UserController : Controller
     {
         private const string ADMIN = "admin";
-        private Blood_Bank_Entities db = new Blood_Bank_Entities();
+        private Blood_Bank_InfoEntities db = new Blood_Bank_InfoEntities();
         private string[] bloodTypes = { "O-", "O+", "A-", "A+", "B-", "B+", "AB-", "AB+" };
 
         public ActionResult CreateUser(User user)

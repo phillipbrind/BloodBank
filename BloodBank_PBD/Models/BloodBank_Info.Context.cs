@@ -12,19 +12,20 @@ namespace BloodBank_PBD.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-
-    public partial class Blood_Bank_Entities : DbContext
+    
+    public partial class Blood_Bank_InfoEntities : DbContext
     {
-        public Blood_Bank_Entities()
-            : base("name=Blood_Bank_Entities")
+        public Blood_Bank_InfoEntities()
+            : base("name=Blood_Bank_InfoEntities")
         {
         }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-
+    
+        public virtual DbSet<Message> Messages { get; set; }
         public virtual DbSet<Test> Tests { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }

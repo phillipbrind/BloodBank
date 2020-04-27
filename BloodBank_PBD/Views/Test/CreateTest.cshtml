@@ -43,11 +43,22 @@
     <div class="form-group">
         <div class="row">
             <div class="col-md-5 d-flex justify-content-center">
-                @Html.LabelFor(m => m.BP)
+                @Html.LabelFor(m => m.Systolic)
             </div>
             <div class="col-md-5">
-                @Html.TextBoxFor(m => m.BP, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => m.BP, null, new { @class = "text-danger" })
+                @Html.TextBoxFor(m => m.Systolic, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Systolic, null, new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-5 d-flex justify-content-center">
+                @Html.LabelFor(m => m.Diastolic)
+            </div>
+            <div class="col-md-5">
+                @Html.TextBoxFor(m => m.Diastolic, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Diastolic, null, new { @class = "text-danger" })
             </div>
         </div>
     </div>

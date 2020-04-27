@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BloodBank_PBD.ViewModel.MessageViewModel
+namespace BloodBank_PBD.Models
 {
     using System;
     using System.ComponentModel.DataAnnotations;
