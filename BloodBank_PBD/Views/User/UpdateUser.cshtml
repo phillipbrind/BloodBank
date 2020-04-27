@@ -4,12 +4,6 @@
     Layout = null;
 }
 
-@section Scripts {
-    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-    <script src="~/Scripts/jquery.validate.min.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-}
-
 <h2>update user information</h2>
 
 @using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "user-div" }))
@@ -79,3 +73,7 @@
         </div>
     </div>
 }
+
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

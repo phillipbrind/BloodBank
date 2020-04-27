@@ -23,6 +23,9 @@
                     </div>
                 </div>
             </div>
+            <div class="admin-btn">
+                @Html.ActionLink("my account", "UpdateUserInfo", new { username = Session["Username"] })
+            </div>
             @if (Session["Role"].Equals("User"))
             {
                 <div class="admin-btn">

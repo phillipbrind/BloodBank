@@ -4,11 +4,6 @@
     Layout = null;
 }
 
-@section Scripts {
-    <script src="~/Scripts/jquery.validate.min.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-}
-
 <h2>add or update a test</h2>
 
 @using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "user-div" }))
@@ -80,3 +75,6 @@
 
     <div class="login-btn d-flex justify-content-center mt-5"><input type="submit" value="add" /></div>
 }
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
