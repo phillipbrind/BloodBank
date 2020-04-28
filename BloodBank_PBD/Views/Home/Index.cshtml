@@ -62,15 +62,15 @@
 </div>
 
 <div class="row">
-    <div class="col-md-4 about-card">
+    <div class="col-lg-4 about-card">
         <p class="card-body-title">About Last<br />Hope</p>
         <p class="card-body-content">Maecenas vel purus eros. Nunc in fringilla arcu. Vivamus eu laoreet enim. Aliquam ornare ipsum sit amet ligula facilisis, ut scelerisque mauris tempor. Duis eleifend sapien vel euismod.</p>
         <p>@Html.ActionLink("Learn More", "About", null, new { @class = "btn btn-outline-light" })</p>
     </div>
-    <div class="col-md-4 p-0">
+    <div class="col-lg-4 p-0">
         <img src="~/images/give_blood.jpeg" alt="give-blood" class="top-img" />
     </div>
-    <div class="col-md-4 blood-camp">
+    <div class="col-lg-4 blood-camp">
         <p class="card-body-title">Upcoming Blood Campaigns</p>
         <p class="card-body-content">Donec libero nisl, dapibus eget velit ac, vestibulum ultrices dolor. Fusce elementum lacus in molestie sagittis. Aenean ultricies tempus sagittis. Pellentesque pretium ornare risus et dapibus. Nullam sit.</p>
         <p>@Html.ActionLink("Learn More", "Services", "Home", null, null, "camps-bookmark", null, new { @class = "btn btn-outline-light" })</p>
@@ -78,14 +78,16 @@
 </div>
 
 <div class="row">
-    <div class="col-md-4 p-0">
+    <div class="col-lg-4 p-0">
         <img src="~/images/blood_donation_01.jpg" alt="blood_donation" class="mid-img" />
     </div>
-    <div class="col-md-8 p-0">
-        <div class="services">
-            <p class="services-card-title">How You Can Help</p>
-            <p class="card-body-content">Phasellus fermentum odio non nibh rutrum, porta pharetra neque commodo. Donec ultricies sed metus id cursus. Sed at consequat nunc. Curabitur ac malesuada libero. Aenean eget elit mi.</p>
-            <p>@Html.ActionLink("Act Now", "Services", null, new { @class = "btn btn-outline-light" })</p>
+    <div class="col-lg-8">
+        <div class="row">
+            <div class="col-12 services">
+                <p class="services-card-title">How You Can Help</p>
+                <p class="card-body-content">Phasellus fermentum odio non nibh rutrum, porta pharetra neque commodo. Donec ultricies sed metus id cursus. Sed at consequat nunc. Curabitur ac malesuada libero. Aenean eget elit mi.</p>
+                <p>@Html.ActionLink("Act Now", "Services", null, new { @class = "btn btn-outline-light" })</p>
+            </div>
         </div>
         <div>
             <div class="row">
@@ -94,7 +96,7 @@
                     <p class="card-body-content">Vestibulum rhoncus gravida erat id convallis. Donec tempus gravida metus, ac feugiat odio hendrerit ac. Quisque non.</p>
                     <p>@Html.ActionLink("Our Partners", "About", "Home", null, null, "hospital-bookmark", null, new { @class = "btn btn-outline-light" })</p>
                 </div>
-                <div class="col-sm-7 p-0">
+                <div class="col-sm-8 p-0">
                     <img src="~/images/blood_donation_02.jpg" alt="blood_donation" class="bottom-img" />
                 </div>
             </div>

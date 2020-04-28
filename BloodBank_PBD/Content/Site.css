@@ -38,7 +38,7 @@ a {
 .menu-bar {
     display: none;
     padding: 5px;
-    margin: 20px;
+    margin: 20px, 50px;
     cursor: pointer;
 }
 
@@ -123,13 +123,13 @@ a {
 }
 
 .footer-title {
-    font: 900 70px poppins-semibold, poppins, sans-serif;
+    font: 900 12vw poppins-semibold, poppins, sans-serif;
     text-transform: uppercase;
     color: #FFFFFF;
 }
 
 .footer-text {
-    font: 900 30px poppins-semibold, poppins, sans-serif;
+    font: 900 5vw poppins-semibold, poppins, sans-serif;
     color: #FFFFFF;
 }
 
@@ -342,20 +342,20 @@ a {
 /* Home Page */
 .carousel-inner img {
     width: 100%;
-    height: 642px;
+    height: 75vw;
 }
 
 .carousel-caption {
-    max-width: 860px;
+    width: 60vw;
     height: 240px;
-    font: 700 120px poppins-semibold, poppins, sans-serif;
+    font: 700 9vw poppins-semibold, poppins, sans-serif;
     color: #000000;
     text-transform: uppercase;
     text-align: left;
     position: absolute;
-    top: 90px;
-    left: 105px;
-    line-height: 1em;
+    top: 12vw;
+    left: 10vw;
+    line-height: 11vw;
 }
 
 .banner-separator {
@@ -369,7 +369,7 @@ a {
 }
 
 .statistics {
-    padding: 130px 50px;
+    padding: 7vw 50px;
 }
 
 .stat-number {
@@ -415,11 +415,11 @@ a {
 
 .services {
     background-color: #F1562A;
-    padding: 50px 230px 50px 70px;
+    padding: 50px 95px 50px 60px;
 }
 
 .services-card-title {
-    font: 800 85px poppins-semibold, poppins, sans-serif;
+    font: 800 9vw poppins-semibold, poppins, sans-serif;
     color: #FFFFFF;
     text-transform: capitalize;
 }
@@ -427,7 +427,6 @@ a {
 .bottom-card-partners {
     background-color: #000000;
     padding: 56px 55px 56px 30px;
-    margin-left: 15px
 }
 
 .bottom-img {
@@ -438,25 +437,25 @@ a {
 /* About Page */
 .banner {
     width: 100%;
-    height: 642px;
+    height: 75vw;
 }
 
 .banner-text {
-    width: 860px;
+    width: 60vw;
     height: 240px;
-    font: 700 120px poppins-semibold, poppins, sans-serif;
+    font: 700 9vw poppins-semibold, poppins, sans-serif;
     color: #000000;
     text-transform: uppercase;
     text-align: left;
     position: absolute;
-    top: 110px;
-    left: 105px;
-    line-height: 1em;
+    top: 14vw;
+    left: 10vw;
+    line-height: 11vw;
 }
 
 .privacy-policy-card {
     padding: 50px 90px;
-    font: 800 55px poppins-semibold, poppins, sans-serif;
+    font: 800 4vw poppins-semibold, poppins, sans-serif;
     text-transform: uppercase;
 }
 
@@ -465,7 +464,7 @@ a {
 }
 
 .privacy-policy-content {
-    padding: 55px 130px 0 0;
+    padding: 55px 15px;
     line-height: 1.7em;
     font: 14px avenir-lt-w01_35-light1475496, sans-serif;
 }
@@ -476,30 +475,17 @@ a {
     }
 
 .gallery-pic {
-    height: 255px;
-    width: 255px;
+    height: 100%;
+    width: 100%;
 }
 
 .hospital-group {
     margin: 0 100px;
 }
 
-.adhb-img {
-    height: 113px;
-}
-
-.nmdhb-img, .southern-cross-img {
-    width: 140px;
-    margin-top: 40px;
-}
-
-.bobdhb-img {
-    width: 150px;
-    margin-top: 30px;
-}
-
-.starship-img {
-    width: 130px;
+.hospital-img {
+    height: 100%;
+    width: 100%;
 }
 
 /* Services Page */
