@@ -454,8 +454,8 @@ a {
 }
 
 .privacy-policy-card {
-    padding: 50px 90px;
-    font: 800 4vw poppins-semibold, poppins, sans-serif;
+    padding: 50px 10vw;
+    font: 800 3.5vw poppins-semibold, poppins, sans-serif;
     text-transform: uppercase;
 }
 
