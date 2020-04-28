@@ -35,6 +35,17 @@ a {
     font: 900 17px poppins-semibold, poppins, sans-serif;
 }
 
+.menu-bar {
+    display: none;
+    padding: 5px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.fas.fa-bars {
+    font-size: 25px;
+}
+
 /* Right Navigation */
 .nav-login {
     align-self: center;
@@ -335,7 +346,7 @@ a {
 }
 
 .carousel-caption {
-    width: 860px;
+    max-width: 860px;
     height: 240px;
     font: 700 120px poppins-semibold, poppins, sans-serif;
     color: #000000;
@@ -358,11 +369,7 @@ a {
 }
 
 .statistics {
-    padding: 130px 0;
-}
-
-.stat-group {
-    margin: 0 30px;
+    padding: 130px 50px;
 }
 
 .stat-number {
@@ -375,13 +382,7 @@ a {
 }
 
 .about-card {
-    width: 508px;
-    border-radius: 0;
     background-color: #000000;
-    border: none;
-}
-
-.index-card-body {
     padding: 50px 95px 50px 60px;
 }
 
@@ -397,46 +398,23 @@ a {
     line-height: 1.7em;
 }
 
-.top-img-card {
-    width: 290px;
-    border-radius: 0;
-}
-
 .top-img {
-    width: 289px;
+    width: 100%;
     height: 384px;
 }
 
-.blood-camp-card {
+.blood-camp {
     background-color: #7EB7E4;
-    width: 467px;
-    border-radius: 0;
-    border: none;
-}
-
-.mid-img-card {
-    width: 507px;
-    border-radius: 0;
-    border: none;
+    padding: 50px 95px 50px 60px;
 }
 
 .mid-img {
-    width: 507px;
-    height: 768px;
+    width: 100%;
+    height: 100%;
 }
 
-.bottom-right-section {
-    display: block;
-}
-
-.services-card {
-    width: 757px;
-    border-radius: 0;
+.services {
     background-color: #F1562A;
-    border: none;
-}
-
-.services-card-body {
     padding: 50px 230px 50px 70px;
 }
 
@@ -447,25 +425,14 @@ a {
 }
 
 .bottom-card-partners {
-    border-radius: 0;
     background-color: #000000;
-    border: none;
-    width: 289px;
-}
-
-.partners-card-body {
     padding: 56px 55px 56px 30px;
-}
-
-.bottom-img-card {
-    width: 468px;
-    border-radius: 0;
-    border: none;
+    margin-left: 15px
 }
 
 .bottom-img {
-    width: 468px;
-    height: 339px;
+    width: 550px;
+    height: 100%;
 }
 
 /* About Page */
@@ -591,4 +558,15 @@ a {
 
 .fab.fa-facebook-f, .fab.fa-twitter, .fab.fa-instagram, .fab.fa-youtube {
     font-size: 40px;
+}
+
+/* Responsive Mode */
+@media only screen and (max-width: 881px) {
+    .menu-bar {
+        display: block;
+    }
+
+    .navbar-nav {
+        display: none;
+    }
 }
