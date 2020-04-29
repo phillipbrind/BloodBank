@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Menu</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="exit-btn">
+        <a href="@Url.Action(ViewBag.ActionName, ViewBag.ControllerName)"><i class="fas fa-times"></i></a>
+    </div>
+
+    <div class="menu-login">
+        @if (@Session["Username"] == null)
+        {
+            @Html.ActionLink("Log In", "Login", "Home")
+        }
+        else
+        {
+            <div id="user-session">
+                @Session["Username"]
+                <i class="fas fa-chevron-circle-down"></i>
+            </div>
+            <ul id="user-session-menu">
+                <li>@Html.ActionLink("my account", "UpdateUserInfo", "User", new { username = Session["Username"] }, null)</li>
+                <li>@Html.ActionLink("logout", "Logout", "Home")</li>
+            </ul>
+        }
+    </div>
+
+    <div>
+        <ul class="menu">
+            <li>@Html.ActionLink("home", "Index")</li>
+            <li>@Html.ActionLink("about", "About")</li>
+            <li>@Html.ActionLink("services", "Services")</li>
+            <li>@Html.ActionLink("contact", "Contact")</li>
+        </ul>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/custom")
+</body>
+</html>

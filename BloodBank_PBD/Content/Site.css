@@ -37,9 +37,10 @@ a {
 
 .menu-bar {
     display: none;
-    padding: 5px;
+    position: absolute;
+    top: 10px;
+    right: 30px;
     margin: 20px, 50px;
-    cursor: pointer;
 }
 
 .fas.fa-bars {
@@ -545,6 +546,41 @@ a {
 .fab.fa-facebook-f, .fab.fa-twitter, .fab.fa-instagram, .fab.fa-youtube {
     font-size: 40px;
 }
+
+/* Responsive Menu */
+.exit-btn {
+    font-size: 15vw;
+    float: right;
+    margin-right: 8vw;
+}
+
+.menu-login {
+    text-transform: capitalize;
+    font: 8vw avenir-lt-w01_35-light1475496, sans-serif;
+    margin: 5vw 0 0 20vw;
+    padding-top: 8vw;
+}
+
+    .menu-login ul {
+        padding: 0;
+        display: none;
+    }
+
+    .menu-login li {
+        list-style-type: none;
+    }
+
+.menu {
+    font: bold 8vw poppins-semibold,poppins,sans-serif;
+    text-transform: uppercase;
+    padding-left: 19vw;
+}
+
+    .menu li {
+        list-style-type: none;
+        margin: 15vw 0;
+        padding: 2vw 0;
+    }
 
 /* Responsive Mode */
 @media only screen and (max-width: 881px) {

@@ -49,8 +49,11 @@ namespace BloodBank_PBD.Controllers
             return View("Index");
         }
 
-        public ActionResult Menu()
+        public ActionResult Menu(string currentAction, string currentControl)
         {
+            ViewBag.ActionName = currentAction;
+            ViewBag.ControllerName = currentControl;
+
             return View();
         }
 

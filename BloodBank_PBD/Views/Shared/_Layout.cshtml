@@ -18,9 +18,11 @@
             <span class="logo-title">last hope</span>
         </a>
 
-        <div class="menu-bar">
-            <i class="fas fa-bars"></i>
-        </div>
+        <a href="@Url.Action("Menu", "Home", new { currentAction=ViewBag.ActionName, currentControl=ViewBag.ControllerName })">
+            <div class="menu-bar">
+                <i class="fas fa-bars"></i>
+            </div>
+        </a>
 
         <!-- Navbar links -->
         <ul class="navbar-nav">

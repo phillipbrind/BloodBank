@@ -2,9 +2,12 @@
 
 @{
     ViewBag.Title = "Contact";
+    ViewBag.ActionName = "Contact";
+    ViewBag.ControllerName = "Home";
 }
 
 @section Scripts {
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v6.0"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
@@ -50,22 +53,22 @@
         <div class="card border-0">
             <div class="card-body contact-card-right">
                 <div class="card-group">
-                    <div class="card">
+                    <div class="card border-0">
                         <div class="card-body">
                             <p class="contact-info-title">address</p>
-                            <p>500 Terry Francois St.<br>San Francisco, CA 94158</p>
+                            <p>500 Terry Francois St.<br>Auckland, New Zealand 0571</p>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card border-0">
                         <div class="card-body">
                             <p class="contact-info-title">phone</p>
                             <p>123-456-7890</p>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card border-0">
                         <div class="card-body">
                             <p class="contact-info-title">email</p>
-                            <p>info@mysite.com</p>
+                            <p>info@lasthope.co.nz</p>
                         </div>
                     </div>
                 </div>
@@ -87,6 +90,7 @@
                         <div class="card-text">YouTube</div>
                     </div>
                 </div>
+                <div class="fb-like d-flex justify-content-center mt-5" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="button" data-action="like" data-size="large" data-share="true"></div>
             </div>
         </div>
     </div>
