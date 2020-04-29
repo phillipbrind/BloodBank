@@ -10,55 +10,59 @@
     @Html.Label("Search By: ")
     @Html.TextBox("search-lastname", null, new { @class = "search-txt", placeholder = "Last Name" })
 </div>
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Age)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BloodType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Location)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody id="user-table">
-        @foreach (var item in Model)
-        {
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FirstName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LastName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Age)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BloodType)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Location)
-                </td>
-                <td>
-                    @Ajax.ActionLink("Edit", "UpdateUser", new { id = item.UserId }, new AjaxOptions { HttpMethod = "GET", UpdateTargetId = "user-div" }) |
-                    @Ajax.ActionLink("Delete", "DeleteUser", new { id = item.UserId }, new AjaxOptions { UpdateTargetId = "user-div" })
-                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Age)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BloodType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Location)
+                </th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody id="user-table">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Age)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BloodType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Location)
+                    </td>
+                    <td>
+                        @Ajax.ActionLink("Edit", "UpdateUser", new { id = item.UserId }, new AjaxOptions { HttpMethod = "GET", UpdateTargetId = "user-div" }) |
+                        @Ajax.ActionLink("Delete", "DeleteUser", new { id = item.UserId }, new AjaxOptions { UpdateTargetId = "user-div" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
 <p>@ViewBag.UserResult</p>
 
+@Scripts.Render("~/bundles/bootstrap")
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/bundles/custom")

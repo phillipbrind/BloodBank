@@ -146,6 +146,8 @@ namespace BloodBank_PBD.Controllers
         {
             User user = db.Users.Find(id);
             db.Users.Remove(user);
+            Test test = db.Tests.Where(m => m.UserId == user.UserId).FirstOrDefault();
+            db.Tests.Remove(test);
             db.SaveChanges();
 
             return RedirectToAction("GetAllUsers");

@@ -29,7 +29,7 @@ namespace BloodBank_PBD.Models
         public string BP { get; set; }
         [MaxLength(9)]
         public string Progress { get; set; }
-        [Required(ErrorMessage = "Make sure you enter a date.")]
+        [Required(ErrorMessage = "Make sure you select a date")]
         public System.DateTime Date { get; set; }
         public int UserId { get; set; }
         [Required(ErrorMessage = "Systolic cannot be blank")]

@@ -36,13 +36,14 @@ namespace BloodBank_PBD.Models
         public string Location { get; set; }
         [Required(ErrorMessage = "Age cannot be blank")]
         public int Age { get; set; }
+        [Required(ErrorMessage = "Make sure you select a blood type")]
         [MaxLength(3)]
         public string BloodType { get; set; }
         [Display(Name = "Username")]
         [Required(ErrorMessage = "Username cannot be blank")]
         [MaxLength(20, ErrorMessage = "Do not enter more than 20 characters")]
         public string UserName { get; set; }
-        [Required(ErrorMessage = "Password cannot be blank")]
+        [Required(ErrorMessage = "Make sure you enter a password")]
         [MaxLength(50)]
         public string Password { get; set; }
 

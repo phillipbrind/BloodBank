@@ -556,7 +556,7 @@ a {
 
 .menu-login {
     text-transform: capitalize;
-    font: 8vw avenir-lt-w01_35-light1475496, sans-serif;
+    font: 7vw avenir-lt-w01_35-light1475496, sans-serif;
     margin: 5vw 0 0 20vw;
     padding-top: 8vw;
 }
@@ -578,7 +578,7 @@ a {
 
     .menu li {
         list-style-type: none;
-        margin: 15vw 0;
+        margin: 8vw 0;
         padding: 2vw 0;
     }
 

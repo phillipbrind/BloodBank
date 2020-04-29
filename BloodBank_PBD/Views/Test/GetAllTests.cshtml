@@ -15,68 +15,72 @@
     @Html.Label("Search By: ")
     @Html.TextBox("search-testid", null, new { @class = "search-txt", placeholder = "Test ID" })
 </div>
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.DonorFullName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User.Age)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TestId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BP)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Height)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Weight)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Progress)
-            </th>
-        </tr>
-    </thead>
-    <tbody id="user-table">
-        @foreach (var item in Model)
-        {
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DonorFullName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.User.Age)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TestId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BP)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Height)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Weight)
-                </td>
-                <td>
-                    @item.Date.ToShortDateString()
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Progress)
-                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.DonorFullName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.User.Age)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TestId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BP)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Height)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Weight)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Progress)
+                </th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody id="user-table">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DonorFullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.User.Age)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TestId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Height)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Weight)
+                    </td>
+                    <td>
+                        @item.Date.ToShortDateString()
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Progress)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
 <p>@ViewBag.TestResult</p>
 
 @Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
 @Scripts.Render("~/bundles/custom")
