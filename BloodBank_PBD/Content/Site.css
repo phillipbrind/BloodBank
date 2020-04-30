@@ -184,7 +184,7 @@ a {
 
 .user-txt:focus + label,
 .user-txt:valid + label {
-    transform: translateY(-35px);
+    transform: translateY(-20px);
     font-size: 12px;
 }
 
