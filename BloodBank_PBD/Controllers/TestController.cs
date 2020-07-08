@@ -1,4 +1,5 @@
-﻿using BloodBank_PBD.Models;
+﻿using BloodBank_PBD.Context;
+using BloodBank_PBD.Models;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
@@ -10,7 +11,7 @@ namespace BloodBank_PBD.Controllers
 {
     public class TestController : Controller
     {
-        private Blood_Bank_InfoEntities db = new Blood_Bank_InfoEntities();
+        private BloodBankContext db = new BloodBankContext();
         private string[] progress = { "Submitted", "Processed", "Completed" };
 
         public ActionResult CreateTest()
@@ -56,7 +57,8 @@ namespace BloodBank_PBD.Controllers
                 {
                     foreach (var ex in e.EntityValidationErrors)
                     {
-                        Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:", ex.Entry.Entity.GetType().Name, ex.Entry.State);
+                        Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                            ex.Entry.Entity.GetType().Name, ex.Entry.State);
 
                         foreach (var se in ex.ValidationErrors)
                         {
@@ -94,7 +96,8 @@ namespace BloodBank_PBD.Controllers
                 {
                     foreach (var ex in e.EntityValidationErrors)
                     {
-                        Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:", ex.Entry.Entity.GetType().Name, ex.Entry.State);
+                        Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                            ex.Entry.Entity.GetType().Name, ex.Entry.State);
 
                         foreach (var se in ex.ValidationErrors)
                         {

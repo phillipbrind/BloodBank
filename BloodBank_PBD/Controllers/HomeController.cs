@@ -1,4 +1,5 @@
-﻿using BloodBank_PBD.Models;
+﻿using BloodBank_PBD.Context;
+using BloodBank_PBD.Models;
 using BloodBank_PBD.ViewModel;
 using System;
 using System.Data.Entity.Validation;
@@ -12,7 +13,7 @@ namespace BloodBank_PBD.Controllers
     public class HomeController : Controller
     {
         private const string ADMIN = "admin";
-        private Blood_Bank_InfoEntities db = new Blood_Bank_InfoEntities();
+        private BloodBankContext db = new BloodBankContext();
 
         public ActionResult Index()
         {
@@ -34,7 +35,8 @@ namespace BloodBank_PBD.Controllers
                 return View(ulm);
             }
 
-            string encrypted_pass = Convert.ToBase64String(System.Security.Cryptography.SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(ulm.Password)));
+            string encrypted_pass = Convert.ToBase64String(System.Security.Cryptography.SHA256.Create()
+                .ComputeHash(Encoding.UTF8.GetBytes(ulm.Password)));
 
             if (db.Users.Where(x => x.UserName.Equals(ulm.UserName) && x.Password.Equals(encrypted_pass)).Count() == 0)
             {
@@ -44,7 +46,7 @@ namespace BloodBank_PBD.Controllers
             }
 
             Session["Username"] = ulm.UserName;
-            Session["Role"] = ulm.UserName.Equals(ADMIN) ? "Admin" : "User";
+            Session["Role"] = ulm.UserName.Equals(ADMIN, StringComparison.InvariantCultureIgnoreCase) ? "Admin" : "User";
 
             return View("Index");
         }
@@ -97,14 +99,12 @@ namespace BloodBank_PBD.Controllers
 
         public ActionResult AddContactMessage(Message message)
         {
-            Blood_Bank_InfoEntities contactDB = new Blood_Bank_InfoEntities();
-
             if (ModelState.IsValid)
             {
                 try
                 {
-                    contactDB.Messages.Add(message);
-                    contactDB.SaveChanges();
+                    db.Messages.Add(message);
+                    db.SaveChanges();
                     string statusMessage = "Message sent";
 
                     return RedirectToAction("ShowStatusMessage", new { statusMessage = statusMessage });
@@ -113,7 +113,8 @@ namespace BloodBank_PBD.Controllers
                 {
                     foreach (var ex in e.EntityValidationErrors)
                     {
-                        Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:", ex.Entry.Entity.GetType().Name, ex.Entry.State);
+                        Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                            ex.Entry.Entity.GetType().Name, ex.Entry.State);
 
                         foreach (var se in ex.ValidationErrors)
                         {

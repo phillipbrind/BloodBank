@@ -1,4 +1,5 @@
-﻿using BloodBank_PBD.Models;
+﻿using BloodBank_PBD.Context;
+using BloodBank_PBD.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -13,7 +14,7 @@ namespace BloodBank_PBD.Controllers
     public class UserController : Controller
     {
         private const string ADMIN = "admin";
-        private Blood_Bank_InfoEntities db = new Blood_Bank_InfoEntities();
+        private BloodBankContext db = new BloodBankContext();
         private string[] bloodTypes = { "O-", "O+", "A-", "A+", "B-", "B+", "AB-", "AB+" };
 
         public ActionResult CreateUser(User user)
@@ -27,7 +28,8 @@ namespace BloodBank_PBD.Controllers
                     return RedirectToAction("SignUp", "Home", user);
                 }
 
-                user.Password = Convert.ToBase64String(System.Security.Cryptography.SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(user.Password)));
+                user.Password = Convert.ToBase64String(System.Security.Cryptography.SHA256.Create()
+                    .ComputeHash(Encoding.UTF8.GetBytes(user.Password)));
 
                 try
                 {
@@ -43,7 +45,8 @@ namespace BloodBank_PBD.Controllers
                 {
                     foreach (var ex in e.EntityValidationErrors)
                     {
-                        Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:", ex.Entry.Entity.GetType().Name, ex.Entry.State);
+                        Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                            ex.Entry.Entity.GetType().Name, ex.Entry.State);
 
                         foreach (var se in ex.ValidationErrors)
                         {
@@ -82,7 +85,8 @@ namespace BloodBank_PBD.Controllers
                 {
                     foreach (var ex in e.EntityValidationErrors)
                     {
-                        Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:", ex.Entry.Entity.GetType().Name, ex.Entry.State);
+                        Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                            ex.Entry.Entity.GetType().Name, ex.Entry.State);
 
                         foreach (var se in ex.ValidationErrors)
                         {
@@ -112,7 +116,8 @@ namespace BloodBank_PBD.Controllers
         {
             if (ModelState.IsValid)
             {
-                user.Password = Convert.ToBase64String(System.Security.Cryptography.SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(user.Password)));
+                user.Password = Convert.ToBase64String(System.Security.Cryptography.SHA256.Create()
+                    .ComputeHash(Encoding.UTF8.GetBytes(user.Password)));
 
                 try
                 {
@@ -125,7 +130,8 @@ namespace BloodBank_PBD.Controllers
                 {
                     foreach (var ex in e.EntityValidationErrors)
                     {
-                        Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:", ex.Entry.Entity.GetType().Name, ex.Entry.State);
+                        Debug.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                            ex.Entry.Entity.GetType().Name, ex.Entry.State);
 
                         foreach (var se in ex.ValidationErrors)
                         {
